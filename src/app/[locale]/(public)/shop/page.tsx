@@ -90,7 +90,7 @@ export default async function ShopPage({ params, searchParams }: { params: Promi
       )}
 
       {!active && fresh.length > 0 && (
-        <section aria-labelledby="fresh" className="band flex flex-col gap-6 bg-ink py-12 text-white md:py-16">
+        <section aria-labelledby="fresh" className="flex flex-col gap-6 bg-ink px-[max(1.25rem,calc((100%-90rem)/2))] py-12 text-white md:py-16">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
               <h2 id="fresh" className="text-3xl">{t("sections.freshTitle")}</h2>

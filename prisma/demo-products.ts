@@ -17,6 +17,10 @@ const BY_CATEGORY: Record<string, Demo[]> = {
     { name: "Club sandwich et frites", price: 3000, stock: 20, photo: "club-sandwich" },
   ],
   "beaute-cheveux": [
+    { name: "Perruque lisse méchée 14 pouces", price: 25000, stock: 6, photo: "perruque-lisse" },
+    { name: "Perruques bouclées (4 coloris)", price: 28000, stock: 8, photo: "perruques-boucles" },
+    { name: "Rallonges et queues de cheval", price: 12000, stock: 15, photo: "perruques-rack" },
+    { name: "Perruques courtes à frange", price: 18000, stock: 10, photo: "perruques-courtes" },
     { name: "Coffret de soins naturels", price: 12000, stock: 8, photo: "soins-naturels" },
     { name: "Palette de maquillage", price: 9000, stock: 14, photo: "maquillage" },
     { name: "Crème et huile de soin", price: 7500, stock: 20, photo: "creme-huile" },

@@ -122,6 +122,9 @@ export function HeroCarousel({ images }: { images: string[] }) {
               }}
             >
               <Image src={src} alt="" fill sizes="(min-width: 1024px) 340px, 220px" priority draggable={false} className="pointer-events-none object-cover" />
+              {/* Voile cuivre : fond les photos dans la palette du site ; plus léger sur la carte mise en avant. */}
+              <span aria-hidden="true" className={cn("pointer-events-none absolute inset-0 bg-gradient-to-t from-[#7a3510] via-[#c76524] to-[#f0a24a] mix-blend-multiply transition-opacity duration-700", isActive ? "opacity-25" : "opacity-55")} />
+              <span aria-hidden="true" className={cn("pointer-events-none absolute inset-0 bg-[#c76524] mix-blend-soft-light transition-opacity duration-700", isActive ? "opacity-20" : "opacity-40")} />
             </button>
           );
         })}
