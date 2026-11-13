@@ -8,7 +8,7 @@ Compresse en WebP (qualité 75, moins de 150 Ko par image) pour garder l'accueil
 **Déjà en place** (importées depuis tes images, recadrées par `_brand/import_photos.py`, originaux dans `_brand/originals/`) :
 `hero-1` à `hero-5`, `cat-nourriture`, `cat-mode`, `cat-chaussures-sacs`, `cat-beaute-cheveux`, `cat-telephones-electronique`, `cat-maison`, `cat-services`.
 
-**Encore provisoires (dégradés)** : `cat-autre`, `studio`.
+**Images de remplacement** : `studio` (recadrage de `why-1`) et `cat-autre` (recadrage de `cta`) viennent de photos existantes ; à remplacer par de vraies photos du studio et de la catégorie « Autre » quand elles existent.
 Les prompts ci-dessous restent valables pour celles-là (et pour remplacer les autres si besoin).
 
 ## Bloc de style à coller à la fin de chaque prompt
