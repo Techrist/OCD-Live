@@ -1,0 +1,1053 @@
+{
+  "brand": {
+    "name": "OCD Live",
+    "tagline": "Ton produit en live, vu partout en Afrique"
+  },
+  "nav": {
+    "book": "Réserver",
+    "lives": "Lives",
+    "about": "À propos",
+    "language": "English",
+    "label": "Navigation principale",
+    "home": "Accueil",
+    "space": "Mon espace",
+    "cta": "Réserver mon live",
+    "shop": "Shop"
+  },
+  "home": {
+    "title": "Fais connaître ton business en live",
+    "studio": "Je viens au studio à Lomé",
+    "studioHint": "En présentiel",
+    "remote": "Je fais mon live depuis chez moi",
+    "remoteHint": "À distance",
+    "resume": "Reprendre ma réservation",
+    "audio": "Choisis comment tu veux faire ton live. Le bouton du haut pour venir au studio à Lomé. Le bouton du bas pour faire ton live depuis chez toi.",
+    "greeting": "Bonjour 👋",
+    "liveNow": "{count, plural, =0 {Aucun live en direct} one {# live en direct} other {# lives en direct}}",
+    "countries": "{count} pays",
+    "how": {
+      "title": "Comment ça marche",
+      "subtitle": "Trois étapes, sans mot de passe.",
+      "s1": {
+        "title": "Choisis ton jour",
+        "text": "Sélectionne le créneau de 1h30 idéal pour présenter tes produits."
+      },
+      "s2": {
+        "title": "Paie par Mobile Money",
+        "text": "Orange Money, MTN MoMo, Moov Money, T-Money ou Wave, selon ton pays."
+      },
+      "s3": {
+        "title": "Passe en live",
+        "text": "Ton produit, ton numéro et ton adresse à l'écran."
+      },
+      "eyebrow": "Simplicité commerciale"
+    },
+    "offers": {
+      "title": "Nos offres",
+      "subtitle": "Commence par un essai, passe à plus quand tu es prêt.",
+      "cta": "Réserver mon live",
+      "eyebrow": "Tarifs clairs et accessibles"
+    },
+    "who": {
+      "title": "Pour tous les vendeurs",
+      "subtitle": "Trouve ta catégorie : l'annuaire classe les lives par pays et par catégorie."
+    },
+    "why": {
+      "title": "Pourquoi OCD Live",
+      "marketing": {
+        "title": "Le marketing avant la vente",
+        "text": "Le live place d'abord ton produit, ton numéro et ton adresse devant le public de la chaîne TikTok House of Challenge."
+      },
+      "mobile": {
+        "title": "Pensé pour ton téléphone",
+        "text": "Mobile Money, WhatsApp et un site léger, même avec une connexion faible."
+      },
+      "support": {
+        "title": "Tu n'es pas seul",
+        "text": "Une assistante t'accompagne pendant ton live à distance."
+      },
+      "trust": {
+        "title": "Des vendeurs de confiance",
+        "text": "Une charte, des vendeurs vérifiés et un signalement simple pour garder un annuaire sûr."
+      },
+      "eyebrow": "Pourquoi nous",
+      "subtitle": "Un service local, pensé pour les vendeurs africains."
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "price": {
+        "q": "Combien coûte un live ?",
+        "a": "Un live d'essai de {duration} coûte {price}. Les autres offres sont sur la page de réservation."
+      },
+      "pay": {
+        "q": "Comment payer ?",
+        "a": "Par Mobile Money (Orange Money, MTN MoMo, Moov Money, T-Money, Wave) ou par carte, selon ton pays."
+      },
+      "cancel": {
+        "q": "Puis-je annuler ou reporter ?",
+        "a": "Le report est gratuit jusqu'à {hours} h avant ton live. Une annulation plus tard n'est pas remboursée."
+      },
+      "remote": {
+        "q": "Dois-je venir à Lomé ?",
+        "a": "Non. Tu peux faire ton live depuis chez toi : une assistante t'accompagne."
+      },
+      "directory": {
+        "q": "Comment apparaître dans l'annuaire ?",
+        "a": "Abonne-toi ({sub} pour 30 jours), puis envoie le lien de ton live pendant les créneaux de validation."
+      },
+      "eyebrow": "Réponses",
+      "subtitle": "Tout ce qu'il faut savoir avant de réserver."
+    },
+    "cta": {
+      "title": "Ta boutique mérite d'être vue.",
+      "subtitle": "Réserve en moins de 2 minutes.",
+      "book": "Réserver mon live",
+      "advisor": "Parler à un conseiller",
+      "trust1": "Paiement sécurisé",
+      "trust2": "Assistance WhatsApp",
+      "trust3": "Studio basé à Lomé"
+    },
+    "launch": "Lancement le 1er décembre 2026",
+    "lead": "Ton produit, ton numéro, ton adresse : vus par le public de House of Challenge.",
+    "trust1": "Paiement Mobile Money",
+    "trust2": "Assistance WhatsApp",
+    "ticker": {
+      "title": "En direct maintenant",
+      "count": "{count} en live",
+      "all": "Voir tous les lives"
+    },
+    "idea": {
+      "eyebrow": "Une idée de M. Bovan",
+      "title": "Un vrai studio à Lomé",
+      "text": "Avant de vendre, il faut être vu. Le live sert d'abord à placer ton produit, ton numéro et ton adresse devant le public, pour que les clients te contactent directement.",
+      "tiktok": "Voir House of Challenge sur TikTok",
+      "mobile": {
+        "title": "Pensé pour ton téléphone",
+        "text": "Mobile Money, WhatsApp et un site léger, même avec une connexion faible."
+      },
+      "trust": {
+        "title": "Des vendeurs de confiance",
+        "text": "Une charte, des vendeurs vérifiés et un signalement simple."
+      },
+      "studioEyebrow": "Le studio"
+    },
+    "heroTitle": "Ton business en live, vu partout en Afrique",
+    "bar": {
+      "studio": "Au studio à Lomé",
+      "remote": "Depuis chez moi",
+      "cta": "Réserver mon live"
+    },
+    "popular": {
+      "eyebrow": "Découvrir",
+      "title": "Catégories populaires",
+      "subtitle": "Tout ce qui se vend en live.",
+      "cta": "Voir les lives en direct"
+    },
+    "steps": {
+      "eyebrow": "Étapes simples",
+      "title": "Réserve en 3 étapes",
+      "subtitle": "Un chemin clair, de l'idée au live."
+    },
+    "countriesBand": {
+      "title": "Ouvert dans {count} pays d'Afrique"
+    },
+    "carousel": {
+      "label": "Portraits de vendeurs",
+      "prev": "Portrait précédent",
+      "next": "Portrait suivant",
+      "card": "Portrait {n} sur {total}"
+    },
+    "shop": {
+      "title": "OCD Shop",
+      "subtitle": "Les produits des vendeurs que tu as vus en live, à commander directement sur WhatsApp.",
+      "cta": "Voir tous les produits"
+    }
+  },
+  "booking": {
+    "step": "Étape {current}/{total}",
+    "back": "Retour",
+    "continue": "Continuer",
+    "modeTitle": "Où veux-tu faire ton live ?",
+    "modeAudio": "Choisis le studio à Lomé, ou ton live depuis chez toi.",
+    "seller": {
+      "categoryTitle": "Que vends-tu ?",
+      "categoryAudio": "Touche l'image qui ressemble le plus à ce que tu vends.",
+      "countryTitle": "Dans quel pays es-tu ?",
+      "countryAudio": "Touche le drapeau de ton pays.",
+      "identityTitle": "Parle-nous de toi",
+      "identityAudio": "Écris ton nom, le nom de ta boutique, ce que tu vends et ta ville.",
+      "nameLabel": "Ton nom complet",
+      "shopLabel": "Nom de ta boutique",
+      "activityLabel": "Ce que tu vends",
+      "cityLabel": "Ta ville (facultatif)",
+      "phoneTitle": "Ton numéro WhatsApp",
+      "phoneAudio": "Écris ton numéro WhatsApp. Tu vas recevoir un code à 6 chiffres.",
+      "saveError": "Impossible d'enregistrer. Réessaie.",
+      "eyebrow": "Profil commercial",
+      "title": "Qu'est-ce que tu vends ?",
+      "audio": "Choisis ta catégorie, écris tes coordonnées, puis entre le code reçu sur WhatsApp.",
+      "selected": "1 sélectionnée",
+      "coordTitle": "Coordonnées professionnelles",
+      "countryLabel": "Ton pays",
+      "countryPlaceholder": "Choisis ton pays",
+      "codeInfo": "On t'envoie un code sécurisé par WhatsApp pour vérifier ton numéro.",
+      "getCode": "Recevoir mon code",
+      "panelBadge": "Vérification WhatsApp",
+      "panelTitle": "Vérifie ton numéro WhatsApp",
+      "panelWaiting": "Remplis le formulaire, puis demande ton code : il arrive en quelques secondes.",
+      "editNumber": "Modifier le numéro",
+      "codeTitle": "Entre ton code à 6 chiffres",
+      "verify": "Valider mon code et continuer",
+      "noMessage": "Tu n'as pas reçu le message ?",
+      "resend": "Renvoyer le code",
+      "privacy": "Ton numéro sert uniquement à t'envoyer ton reçu, tes rappels et à organiser ton live.",
+      "phoneLabel": "Ton numéro WhatsApp"
+    },
+    "package": {
+      "title": "Choisis ton offre",
+      "audio": "Touche l'offre que tu veux. Le prix est écrit en francs CFA.",
+      "mostChosen": "Le plus choisi",
+      "perHour": "soit {price} l'heure",
+      "choose": "Choisir",
+      "live": "{count, plural, one {# live} other {# lives}}",
+      "quote": "Sur devis",
+      "quoteCta": "Écrire sur WhatsApp",
+      "quoteMessage": "Bonjour OCD Live, je voudrais une offre sur mesure.",
+      "eyebrow": "Réservation",
+      "custom": "Sur mesure",
+      "duration": "Durée : {duration}",
+      "chooseNamed": "Choisir {name}",
+      "guaranteeTitle": "Diffusion et paiement simples",
+      "guaranteeText": "Toutes les offres incluent la diffusion sur le compte TikTok House of Challenge. Tu paies par Mobile Money ou par carte, selon ton pays."
+    },
+    "slot": {
+      "title": "Choisis ton jour et ton heure",
+      "audio": "Touche un jour dans le calendrier, puis touche l'heure qui te convient.",
+      "prevMonth": "Mois précédent",
+      "nextMonth": "Mois suivant",
+      "closed": "Fermé",
+      "free": "{count} libre(s)",
+      "full": "Complet",
+      "pickDay": "Touche un jour pour voir les heures.",
+      "noSlots": "Aucun créneau ce jour-là.",
+      "timeLome": "{time} (heure de Lomé)",
+      "timeLocal": "{time} chez toi",
+      "loading": "Chargement…",
+      "errorFull": "Ce créneau vient d'être pris. Choisis-en un autre.",
+      "errorNetwork": "Pas de réseau. Réessaie.",
+      "waitlist": "Me prévenir si une place se libère",
+      "waitlistDone": "C'est noté : tu seras prévenu sur WhatsApp.",
+      "eyebrow": "Réservation studio et distance",
+      "subtitle": "Choisis le jour, puis l'heure qui te convient.",
+      "realtime": "Créneaux ouverts en temps réel",
+      "closedShort": "Fermé",
+      "freeShort": "{count, plural, one {# créneau} other {# créneaux}}",
+      "fullShort": "Complet",
+      "legendFree": "Créneaux libres",
+      "legendSelected": "Jour choisi",
+      "legendClosed": "Fermé ou complet",
+      "slotsTitle": "Créneaux horaires",
+      "slotCount": "{count, plural, one {# créneau} other {# créneaux}}",
+      "places": "{count, plural, one {# place} other {# places}}",
+      "zones": "Heures dans ton pays",
+      "zoneLome": "Lomé (GMT)",
+      "zoneYou": "Chez toi ({country})",
+      "zoneNote": "L'équipe se connecte 15 minutes avant le début.",
+      "chosen": "Créneau retenu",
+      "toPayment": "Continuer vers le paiement",
+      "noteHold": "Créneau bloqué 10 minutes pendant le paiement.",
+      "noteChange": "Report gratuit jusqu'à 48 h avant le live."
+    },
+    "payment": {
+      "title": "Comment veux-tu payer ?",
+      "audio": "Vérifie ton offre, choisis comment payer, puis touche le bouton pour payer. Tu as dix minutes.",
+      "timeLeft": "Il te reste {time}",
+      "offer": "Offre",
+      "when": "Jour",
+      "time": "Heure",
+      "lome": "(heure de Lomé)",
+      "local": "chez toi",
+      "total": "Total",
+      "chooseMethod": "Comment veux-tu payer ?",
+      "phoneLabel": "Numéro qui paie",
+      "pay": "Payer {amount}",
+      "retry": "Réessayer",
+      "failed": "Le paiement n'a pas abouti. Réessaie ou change de moyen.",
+      "expired": "Temps écoulé. Ton créneau est libéré, choisis-en un autre.",
+      "slotTaken": "Ce créneau vient d'être pris. Choisis-en un autre.",
+      "backToSlots": "Choisir un autre créneau",
+      "errorNetwork": "Pas de réseau. Réessaie.",
+      "errorPhone": "Numéro ou moyen de paiement invalide.",
+      "methods": {
+        "ORANGE_MONEY": "Orange Money",
+        "MTN_MOMO": "MTN MoMo",
+        "MOOV": "Moov Money",
+        "TMONEY": "T-Money",
+        "WAVE": "Wave",
+        "CARD": "Carte Visa / Mastercard"
+      },
+      "pageTitle": "Finalise ta réservation",
+      "eyebrow": "Réservation",
+      "subtitle": "Paiement direct et sécurisé par Mobile Money ou carte bancaire.",
+      "locked": "Créneau verrouillé pour",
+      "lockedText": "Ton créneau du {date} est bloqué pendant que tu paies.",
+      "guaranteed": "Place garantie",
+      "order": "Ta commande",
+      "seller": "Boutique",
+      "fees": "Frais supplémentaires",
+      "feesFree": "Aucun",
+      "totalNet": "Total net à régler",
+      "freeChange": "Report sans frais possible jusqu'à 48 h avant le début du live.",
+      "phoneFor": "Numéro qui paie avec {method}",
+      "phoneNote": "Tu recevras la demande de confirmation sur ce numéro.",
+      "trust1": "Paiement sécurisé",
+      "trust2": "Aucune donnée de carte stockée",
+      "loading": "Chargement…"
+    },
+    "confirmation": {
+      "title": "Réservation confirmée !",
+      "notFound": "Réservation introuvable.",
+      "offer": "Offre",
+      "when": "Jour",
+      "time": "Heure",
+      "paid": "Payé",
+      "qrAlt": "QR code de check-in",
+      "qrOnsite": "Montre ce QR code à ton arrivée au studio.",
+      "qrRemote": "Teste ta connexion 15 minutes avant ton live.",
+      "download": "Télécharger le reçu",
+      "whatsapp": "Envoyer sur WhatsApp",
+      "whatsappMessage": "Ma réservation OCD Live {reference} est confirmée.",
+      "mySpace": "Mon espace",
+      "badge": "Réservation confirmée et garantie",
+      "congrats": "Félicitations {name} !",
+      "scheduled": "Ton direct est officiellement programmé.",
+      "summary": "Ton paiement de {amount} a été validé. Ton reçu est disponible ci-dessous et part aussi sur WhatsApp au {phone}.",
+      "passTitle": "Pass officiel de diffusion",
+      "confirmed": "Confirmé et réglé",
+      "slotReserved": "Créneau de diffusion réservé",
+      "studioTime": "Studio Lomé (GMT)",
+      "yourTime": "Chez toi",
+      "modeLabel": "Mode",
+      "modeOnsite": "Au studio à Lomé",
+      "modeRemote": "À distance",
+      "nextTitle": "Ce qui va se passer maintenant",
+      "nextCount": "3 étapes simples",
+      "n1": {
+        "title": "Message WhatsApp de confirmation",
+        "text": "Tu reçois ta confirmation, puis des rappels la veille et 1 heure avant."
+      },
+      "n2Onsite": {
+        "title": "Arrivée au studio",
+        "text": "Présente le QR code de ton reçu à la régie à ton arrivée."
+      },
+      "n2Remote": {
+        "title": "Test de connexion",
+        "text": "15 minutes avant, l'assistante teste ta connexion et ton cadrage."
+      },
+      "n3": {
+        "title": "Ton live en direct",
+        "text": "Ton produit, ton numéro et ton adresse passent à l'écran sur House of Challenge."
+      },
+      "kitTitle": "Checklist de préparation",
+      "kitIntro": "Prépare ces quatre points pour un live réussi.",
+      "kit": {
+        "light": {
+          "title": "Une bonne lumière",
+          "text": "Place-toi face à une fenêtre ou une lampe."
+        },
+        "network": {
+          "title": "Un bon réseau",
+          "text": "Branche ton téléphone et teste ta connexion."
+        },
+        "products": {
+          "title": "Tes produits prêts",
+          "text": "Sélectionne 10 à 15 articles et colle les prix bien visibles."
+        },
+        "number": {
+          "title": "Ton numéro affiché",
+          "text": "Prépare ton numéro WhatsApp à montrer à l'écran."
+        }
+      },
+      "helpTitle": "Une question sur ta réservation ?",
+      "helpText": "Un conseiller te répond sur WhatsApp.",
+      "helpCta": "Parler à un conseiller",
+      "helpMessage": "Bonjour OCD Live, j'ai une question sur ma réservation {reference}.",
+      "another": "Programmer un autre live",
+      "shareTitle": "Prépare ton audience dès aujourd'hui",
+      "shareText": "Partage ta réservation sur WhatsApp pour prévenir tes clients."
+    },
+    "eyebrow": "Réservation",
+    "stepOf": "Étape {current} sur {total}",
+    "steps": {
+      "label": "Étapes de la réservation",
+      "mode": "Mode",
+      "vendeur": "Vendeur",
+      "package": "Offre",
+      "creneau": "Date",
+      "paiement": "Paiement",
+      "done": "Validé",
+      "current": "En cours",
+      "upcoming": "À venir"
+    },
+    "mode": {
+      "label": "Mode de live",
+      "studio": {
+        "title": "Au studio à Lomé",
+        "text": "Notre régie prépare et diffuse ton live.",
+        "tag1": "Régie sur place",
+        "tag2": "Un vendeur par créneau"
+      },
+      "remote": {
+        "title": "Depuis chez moi",
+        "text": "Une assistante t'accompagne en direct, à distance.",
+        "tag1": "Partout en Afrique",
+        "tag2": "Test réseau 15 min avant"
+      },
+      "tip": "Tu hésites ? Tu pourras modifier ton choix avant de payer.",
+      "continue": "Continuer",
+      "secure": "Paiement Mobile Money sécurisé",
+      "assist": "Assistance WhatsApp"
+    },
+    "extras": {
+      "title": "Ce qui est inclus dans ton live",
+      "subtitle": "Un live clé en main : tu apportes ton produit, on s'occupe du reste.",
+      "i1": {
+        "title": "Diffusion House of Challenge",
+        "text": "Ton live passe sur le compte TikTok du studio, devant sa communauté."
+      },
+      "i2": {
+        "title": "Un accompagnement",
+        "text": "Régie au studio de Lomé, ou assistante en direct si tu es à distance."
+      },
+      "i3": {
+        "title": "Ton produit mis en avant",
+        "text": "Produit, numéro WhatsApp et adresse présentés à l'écran et à l'oral."
+      },
+      "i4": {
+        "title": "Reçu et rappels",
+        "text": "Reçu PDF, puis rappels WhatsApp la veille et une heure avant."
+      },
+      "studioAlt": "Le studio OCD Live à Lomé",
+      "faqTitle": "Questions avant de réserver",
+      "q1": {
+        "q": "Puis-je reporter mon live ?",
+        "a": "Oui, gratuitement jusqu'à {hours} h avant le créneau, depuis Mon espace."
+      },
+      "q2": {
+        "q": "Comment je paie ?",
+        "a": "Par Mobile Money au moment de la réservation. Ton créneau est bloqué 10 minutes pendant le paiement."
+      },
+      "q3": {
+        "q": "Que se passe-t-il si je ne peux pas venir ?",
+        "a": "Annulation remboursée jusqu'à {hours} h avant. Après, le créneau n'est pas remboursé."
+      },
+      "helpTitle": "Besoin d'aide pour réserver ?",
+      "helpText": "Un conseiller te répond sur WhatsApp et peut réserver avec toi.",
+      "helpCta": "Parler à un conseiller"
+    }
+  },
+  "login": {
+    "title": "Connexion",
+    "phoneLabel": "Ton numéro WhatsApp",
+    "send": "Recevoir mon code",
+    "codeLabel": "Code envoyé au {phone}",
+    "verify": "Valider",
+    "changeNumber": "Changer de numéro",
+    "devCode": "Code de test : {code}",
+    "logout": "Me déconnecter",
+    "errors": {
+      "INVALID_PHONE": "Numéro invalide. Exemple : +228 90 00 00 00",
+      "INVALID_INPUT": "Code invalide.",
+      "WRONG": "Code faux. Il te reste {n} essai(s).",
+      "EXPIRED": "Code expiré. Demande-en un nouveau.",
+      "LOCKED": "Trop d'essais. Réessaie dans 15 minutes.",
+      "RATE_LIMITED": "Trop de demandes. Attends quelques minutes.",
+      "network": "Pas de réseau. Réessaie."
+    }
+  },
+  "espace": {
+    "title": "Mon espace",
+    "hello": "Bonjour",
+    "next": "Mon prochain live",
+    "noNext": "Aucun live prévu.",
+    "book": "Réserver un live",
+    "bookings": "Mes réservations",
+    "empty": "Tu n'as pas encore de réservation.",
+    "receipt": "Reçu",
+    "resume": "Terminer le paiement",
+    "status": {
+      "DRAFT": "Brouillon",
+      "HELD": "Bloquée",
+      "CONFIRMED": "Confirmée",
+      "EXPIRED": "Expirée",
+      "CANCELLED": "Annulée",
+      "COMPLETED": "Terminée",
+      "NO_SHOW": "Absent"
+    },
+    "onsite": "Au studio à Lomé",
+    "remote": "À distance",
+    "lome": "(heure de Lomé)",
+    "submitLive": "Soumettre mon live",
+    "subscriptionLink": "Mon abonnement",
+    "showcaseLink": "Ma vitrine",
+    "statsLink": "Mes statistiques",
+    "subscription": {
+      "title": "Abonnement annuaire",
+      "active": "Abonnement actif",
+      "until": "Jusqu'au {date}",
+      "inactive": "Pas d'abonnement actif",
+      "price": "{price} pour 30 jours",
+      "perks": "Soumets ton live deux fois par jour pour apparaître dans ton pays et ta catégorie.",
+      "chooseMethod": "Comment veux-tu payer ?",
+      "phoneLabel": "Numéro qui paie",
+      "subscribe": "S'abonner · {price}",
+      "renew": "Renouveler · {price}",
+      "error": "Le paiement n'a pas pu démarrer. Réessaie.",
+      "statusActive": "Actif",
+      "statusExpired": "Terminé"
+    },
+    "submit": {
+      "title": "Soumettre mon live",
+      "windows": "Créneaux : {list} (heure de Lomé)",
+      "open": "Un créneau est ouvert : colle le lien de ton live.",
+      "closed": "Aucun créneau ouvert pour le moment.",
+      "urlLabel": "Lien de ton live",
+      "send": "Envoyer",
+      "ok": "Live envoyé : l'équipe le valide.",
+      "recent": "Mes derniers envois",
+      "subscribe": "S'abonner",
+      "status": {
+        "PENDING": "En attente",
+        "PUBLISHED": "Publié",
+        "REJECTED": "Refusé",
+        "ARCHIVED": "Terminé"
+      },
+      "errors": {
+        "NO_SUBSCRIPTION": "Il faut un abonnement actif pour soumettre un live.",
+        "OUTSIDE_WINDOW": "Les lives se soumettent pendant les créneaux. Prochain créneau : {time} (heure de Lomé).",
+        "INVALID_URL": "Lien invalide. Colle le lien TikTok, Facebook, Instagram ou YouTube.",
+        "DUPLICATE": "Ce lien est déjà envoyé.",
+        "NO_PROFILE": "Complète d'abord ton profil.",
+        "network": "Pas de réseau. Réessaie."
+      }
+    },
+    "showcase": {
+      "title": "Ma vitrine",
+      "view": "Voir ma vitrine",
+      "shop": "Nom de ma boutique",
+      "activity": "Ce que je vends",
+      "description": "Présentation (300 caractères)",
+      "save": "Enregistrer",
+      "noProfile": "Pas de profil."
+    },
+    "stats": {
+      "title": "Mes statistiques",
+      "last30": "30 derniers jours",
+      "views": "Vues de ma fiche",
+      "liveClicks": "Clics vers mon live",
+      "whatsappClicks": "Clics WhatsApp"
+    },
+    "actions": {
+      "cancel": "Annuler ma réservation",
+      "cancelRefund": "Tu seras remboursé : l'annulation est gratuite plus de 48 h avant le live.",
+      "cancelNoRefund": "Attention : à moins de 48 h du live, il n'y a aucun remboursement.",
+      "cancelledRefunded": "Réservation annulée et remboursée.",
+      "cancelled": "Réservation annulée.",
+      "confirmCancel": "Oui, annuler",
+      "keep": "Non, garder",
+      "sheet": "Fiche produit",
+      "reschedule": "Reporter"
+    },
+    "reschedule": {
+      "title": "Reporter mon live",
+      "current": "Actuellement : {date}",
+      "choose": "Nouveau créneau",
+      "submit": "Reporter",
+      "done": "Live reporté.",
+      "errors": {
+        "TOO_LATE": "Le report n'est plus possible : il reste {hours} h avant ton live, et le report est gratuit jusqu'à {free} h avant.",
+        "SLOT_FULL": "Ce créneau est complet.",
+        "INVALID_SLOT": "Créneau invalide.",
+        "NOT_FOUND": "Réservation introuvable.",
+        "INVALID_STATE": "Cette réservation ne peut pas être reportée."
+      }
+    },
+    "sheet": {
+      "title": "Fiche produit",
+      "intro": "La régie reçoit cette fiche à l'avance pour afficher tes produits, ton numéro et ton adresse à l'écran.",
+      "address": "Adresse à afficher",
+      "phone": "Numéro à afficher",
+      "productName": "Produit",
+      "price": "Prix (F)",
+      "quantity": "Quantité",
+      "add": "Ajouter un produit",
+      "save": "Enregistrer la fiche",
+      "saved": "Fiche enregistrée.",
+      "error": "Enregistrement impossible."
+    },
+    "productsLink": "Mes produits",
+    "products": {
+      "title": "Mes produits",
+      "intro": "Ajoute un produit en trois champs : nom, prix et photo. Il apparaît dans OCD Shop et sur ta vitrine ; les clients te commandent par WhatsApp.",
+      "viewShop": "Voir OCD Shop",
+      "add": "Ajouter un produit",
+      "name": "Nom du produit",
+      "price": "Prix (FCFA)",
+      "photo": "Photo (JPG, PNG ou WebP, 3 Mo max)",
+      "more": "Stock et catégorie (facultatif)",
+      "stock": "Stock",
+      "category": "Catégorie",
+      "save": "Ajouter",
+      "added": "Produit ajouté.",
+      "list": "Mes produits",
+      "empty": "Aucun produit pour l'instant.",
+      "hidden": "masqué",
+      "hide": "Masquer",
+      "show": "Afficher",
+      "delete": "Supprimer",
+      "confirmDelete": "Supprimer ce produit ?",
+      "noProfile": "Pas de profil.",
+      "errors": {
+        "network": "Connexion impossible. Réessaie.",
+        "INVALID_INPUT": "Vérifie le nom et le prix.",
+        "NO_PROFILE": "Crée d'abord ton profil vendeur en réservant un live.",
+        "LIMIT": "Tu as atteint la limite de 50 produits.",
+        "INVALID_CATEGORY": "Catégorie invalide.",
+        "INVALID_IMAGE": "Photo non reconnue : utilise un fichier JPG, PNG ou WebP.",
+        "TOO_BIG": "Photo trop lourde (3 Mo maximum).",
+        "FORBIDDEN": "Connecte-toi en tant que vendeur."
+      }
+    },
+    "nav": {
+      "label": "Navigation de l'espace vendeur",
+      "overview": "Résumé",
+      "bookings": "Réservations",
+      "products": "Produits",
+      "live": "Mon live",
+      "showcase": "Vitrine",
+      "stats": "Statistiques",
+      "subscription": "Abonnement"
+    },
+    "figures": {
+      "label": "Chiffres clés",
+      "upcoming": "Lives à venir",
+      "products": "Produits en ligne",
+      "views": "Vues (30 j)",
+      "whatsapp": "Clics WhatsApp (30 j)"
+    },
+    "viewShowcase": "Voir ma vitrine",
+    "subActive": "Actif jusqu'au {date}",
+    "subNone": "Pas d'abonnement actif : passe en direct dans l'annuaire dès 5 000 F.",
+    "subManage": "Gérer",
+    "subStart": "S'abonner",
+    "productsHint": "Nom, prix, photo",
+    "submitHint": "Colle ton lien",
+    "showcaseHint": "Ta page publique",
+    "statsHint": "Vues et clics"
+  },
+  "admin": {
+    "title": "Back-office",
+    "common": {
+      "save": "Enregistrer"
+    },
+    "nav": {
+      "today": "Aujourd'hui",
+      "bookings": "Réservations",
+      "calendar": "Calendrier",
+      "packages": "Packages",
+      "notifications": "Envois",
+      "journal": "Journal",
+      "settings": "Paramètres",
+      "validation": "Validation"
+    },
+    "mode": {
+      "ONSITE": "Studio",
+      "REMOTE": "À distance"
+    },
+    "status": {
+      "DRAFT": "Brouillon",
+      "HELD": "Bloquée",
+      "CONFIRMED": "Confirmée",
+      "EXPIRED": "Expirée",
+      "CANCELLED": "Annulée",
+      "COMPLETED": "Terminée",
+      "NO_SHOW": "Absent"
+    },
+    "payStatus": {
+      "NONE": "Non payé",
+      "PENDING": "Paiement en cours",
+      "SUCCEEDED": "Payé",
+      "FAILED": "Paiement échoué",
+      "REFUNDED": "Remboursé"
+    },
+    "today": {
+      "title": "Qui passe aujourd'hui",
+      "empty": "Aucun live aujourd'hui.",
+      "unassigned": "Sans assistante"
+    },
+    "bookings": {
+      "title": "Réservations",
+      "new": "Réservation assistée",
+      "filterStatus": "Statut",
+      "filterDate": "Jour du live",
+      "all": "Tous",
+      "filter": "Filtrer",
+      "empty": "Aucune réservation."
+    },
+    "booking": {
+      "status": "Statut",
+      "seller": "Vendeur",
+      "shop": "Boutique",
+      "country": "Pays",
+      "offer": "Offre",
+      "slot": "Créneau",
+      "amount": "Montant",
+      "payments": "Paiements",
+      "assistant": "Assistante",
+      "studioPay": "Encaisser au studio",
+      "cancel": "Annuler la réservation",
+      "cancelReason": "Motif d'annulation",
+      "checkedIn": "Arrivé à {time}",
+      "sheet": "Fiche produit"
+    },
+    "assisted": {
+      "title": "Réservation assistée",
+      "phone": "Numéro WhatsApp du vendeur",
+      "package": "Offre",
+      "slot": "Créneau",
+      "submit": "Créer (bloquée 24 h)",
+      "created": "Réservation créée.",
+      "errors": {
+        "INVALID_INPUT": "Vérifie le numéro et les choix.",
+        "INVALID_PACKAGE": "Offre indisponible.",
+        "INVALID_SLOT": "Créneau introuvable.",
+        "SLOT_FULL": "Ce créneau est complet.",
+        "NOT_A_SELLER": "Ce numéro appartient à un membre de l'équipe."
+      }
+    },
+    "calendar": {
+      "title": "Calendrier",
+      "month": "Mois",
+      "show": "Afficher",
+      "openMonth": "Ouvrir ce mois",
+      "none": "Aucun créneau ce mois-ci : ouvre le mois.",
+      "closed": "Fermé",
+      "openCount": "{open} ouverts sur {total}",
+      "closeDay": "Fermer le jour",
+      "reopenDay": "Rouvrir le jour"
+    },
+    "packages": {
+      "title": "Packages et prix",
+      "name": "Nom",
+      "price": "Prix (FCFA)",
+      "duration": "Durée (min)",
+      "lives": "Nombre de lives",
+      "order": "Ordre",
+      "active": "Visible",
+      "highlighted": "Le plus choisi",
+      "save": "Enregistrer"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "hint": "Valeurs au format JSON (nombre, texte entre guillemets, liste entre crochets).",
+      "save": "Enregistrer"
+    },
+    "journal": {
+      "title": "Journal d'audit",
+      "empty": "Aucune action enregistrée."
+    },
+    "notifications": {
+      "title": "Journal des envois",
+      "empty": "Aucun envoi."
+    },
+    "validation": {
+      "title": "Lives à valider",
+      "empty": "Aucun live en attente.",
+      "open": "Ouvrir le lien",
+      "validate": "Valider",
+      "reject": "Refuser",
+      "reason": "Motif de refus",
+      "reasons": {
+        "PROHIBITED": "Produit interdit",
+        "BAD_LINK": "Lien incorrect",
+        "NOT_LIVE": "Pas en direct",
+        "OTHER": "Autre motif"
+      },
+      "flags": {
+        "duplicate": "Lien déjà vu",
+        "firstLive": "Premier live",
+        "verified": "Vendeur vérifié"
+      },
+      "errors": {
+        "NOT_FOUND": "Ce live a déjà été traité.",
+        "WINDOW_CLOSED": "La fenêtre est terminée : le live est archivé.",
+        "REASON_REQUIRED": "Indique un motif.",
+        "NETWORK": "Pas de réseau.",
+        "INVALID_INPUT": "Demande invalide.",
+        "FORBIDDEN": "Accès refusé."
+      }
+    },
+    "checkin": {
+      "title": "Arrivée au studio",
+      "reference": "Réservation",
+      "seller": "Vendeur",
+      "slot": "Créneau",
+      "offer": "Offre",
+      "status": "Arrivée",
+      "checkedIn": "Enregistrée à {time}",
+      "notYet": "Pas encore",
+      "confirm": "Valider l'arrivée",
+      "result": {
+        "ok": "Arrivée enregistrée.",
+        "already": "Arrivée déjà enregistrée.",
+        "NOT_FOUND": "Réservation introuvable.",
+        "INVALID_STATE": "Cette réservation n'est pas un live au studio confirmé.",
+        "TOO_EARLY": "Trop tôt : le check-in ouvre 2 h avant le créneau.",
+        "TOO_LATE": "Le créneau est terminé."
+      }
+    }
+  },
+  "audio": {
+    "listen": "Écouter la consigne",
+    "stop": "Arrêter",
+    "short": "Écouter"
+  },
+  "whatsapp": {
+    "float": "Parler à un conseiller",
+    "message": "Bonjour OCD Live, j'ai une question."
+  },
+  "footer": {
+    "about": "À propos",
+    "terms": "Conditions",
+    "privacy": "Confidentialité",
+    "studio": "Studio à Lomé, Togo",
+    "initiative": "OCD Live, une initiative Bovan Group, Lomé, Togo",
+    "tiktok": "TikTok : @houseofchallenge",
+    "contact": "Contact WhatsApp",
+    "nav": "Pied de page"
+  },
+  "legal": {
+    "about": {
+      "title": "À propos",
+      "p1": "OCD Live donne de la visibilité aux vendeurs africains par le live : un studio à Lomé (Togo) diffuse sur le compte TikTok House of Challenge, et les vendeurs à distance sont accompagnés par une assistante.",
+      "p2": "Le principe : le marketing avant la vente. Le live sert d'abord à placer ton produit, ton numéro et ton adresse.",
+      "p3": "OCD Live est une initiative de Bovan Group.",
+      "principleTitle": "Notre principe : le marketing avant la vente",
+      "principleText": "Avant de vendre, il faut être vu. Le live sert d'abord à placer ton produit, ton numéro et ton adresse sous les yeux du public, pour que les clients te contactent directement.",
+      "offerTitle": "Ce qu'on fait pour toi",
+      "offer": {
+        "studio": {
+          "title": "Un studio à Lomé",
+          "text": "Tu viens avec tes produits : l'équipe s'occupe de la régie et de la diffusion."
+        },
+        "remote": {
+          "title": "Live à distance",
+          "text": "Tu restes chez toi, une assistante t'accompagne pendant ton live."
+        },
+        "payment": {
+          "title": "Réservation simple",
+          "text": "Un créneau, un paiement Mobile Money, un reçu envoyé sur WhatsApp."
+        },
+        "directory": {
+          "title": "Annuaire des lives",
+          "text": "Abonné, tu apparais dans ton pays et ta catégorie quand tu es en direct."
+        }
+      },
+      "studioTitle": "Le studio de Lomé",
+      "studioText": "C'est ici que les lives en présentiel sont diffusés, sur le compte TikTok House of Challenge.",
+      "studioPlace": "Lomé, Togo",
+      "studioHours": "De {from} à {to} (heure de Lomé)",
+      "studioClosed": "Fermé : {days}",
+      "commitTitle": "Nos engagements",
+      "commit": {
+        "real": {
+          "title": "De vrais produits",
+          "text": "Chaque vendeur présente des produits réels. Les produits interdits sont refusés."
+        },
+        "contact": {
+          "title": "Un vrai contact",
+          "text": "Ton numéro et ton adresse sont affichés : les clients savent où te trouver."
+        },
+        "respect": {
+          "title": "Le respect des clients",
+          "text": "On répond, on livre, on reste honnête. Les abus sont signalés et traités."
+        }
+      },
+      "commitLink": "Lire les conditions et la charte",
+      "whoTitle": "Qui est derrière OCD Live ?",
+      "contactTitle": "Une question ? On te répond sur WhatsApp.",
+      "contactText": "Réponse rapide d'un conseiller.",
+      "contactBook": "Réserver un live"
+    },
+    "terms": {
+      "title": "Conditions et annulation",
+      "h1": "Réservation",
+      "p1": "Une réservation est confirmée après le paiement. Le créneau choisi est bloqué 10 minutes le temps de payer, puis il est libéré.",
+      "h2": "Report et annulation",
+      "p2": "Le report est gratuit jusqu'à 48 h avant le live. Une annulation moins de 48 h avant le live n'est pas remboursée.",
+      "h3": "Produits interdits",
+      "p3": "Les produits interdits entraînent le refus du live et, en cas de récidive, la suspension du compte. La liste complète sera publiée par l'équipe.",
+      "h4": "Charte du vendeur",
+      "p4": "Je présente des produits réels, je donne mon vrai numéro et ma vraie adresse, et je réponds à mes clients."
+    },
+    "privacy": {
+      "title": "Confidentialité",
+      "h1": "Données collectées",
+      "p1": "Nous gardons ton numéro WhatsApp, ton nom, ta boutique, ton pays et tes réservations pour faire fonctionner le service et t'envoyer reçus et rappels.",
+      "h2": "Paiement",
+      "p2": "Aucune donnée de carte n'est stockée par OCD Live : le paiement passe par un prestataire agréé.",
+      "h3": "Tes droits",
+      "p3": "Tu peux demander l'accès, la correction ou la suppression de tes données en nous écrivant sur WhatsApp. Nous respectons la loi togolaise sur la protection des données et celles des pays des vendeurs."
+    }
+  },
+  "lives": {
+    "title": "Lives en direct",
+    "subtitle": "Choisis un pays, puis une catégorie.",
+    "next": "Prochain créneau : {time} (heure de Lomé)",
+    "liveCount": "{count, plural, =0 {Aucun live} other {# en live}}",
+    "live": "En direct",
+    "verified": "Vendeur vérifié",
+    "watch": "Voir le live",
+    "whatsapp": "WhatsApp",
+    "showcase": "Voir la vitrine",
+    "categories": "Catégories",
+    "all": "Tous",
+    "empty": "Aucun live en cours dans ce pays pour le moment.",
+    "allCountries": "Tous les pays",
+    "waMessage": "Bonjour, je vous contacte depuis OCD Live.",
+    "current": "Directs en cours",
+    "currentSub": "Découvre les vendeurs actuellement en direct.",
+    "noneNow": "Aucun live en cours pour le moment.",
+    "byCountry": "Par pays",
+    "programEyebrow": "Programme",
+    "program": "Créneaux de diffusion du jour",
+    "programSub": "les lives se soumettent et se valident pendant ces créneaux.",
+    "zone": "Heure de Lomé (GMT)",
+    "windowOpen": "En cours",
+    "windowNext": "Prochain",
+    "windowLater": "Plus tard",
+    "cta": {
+      "eyebrow": "Espace vendeurs",
+      "title": "Tu as des produits à écouler ? Passe en direct !",
+      "text": "Réserve ton studio à Lomé ou connecte-toi à distance : l'équipe gère la régie et la diffusion.",
+      "button": "Réserver mon créneau live",
+      "from": "Dès {price}",
+      "subscribe": "S'abonner à l'annuaire"
+    },
+    "statCountries": "{count, plural, =0 {Aucun pays} one {# pays} other {# pays}}",
+    "how": {
+      "title": "Comment apparaître ici",
+      "subtitle": "Trois étapes pour que les acheteurs te trouvent pendant ton live.",
+      "s1": {
+        "title": "Réserve ton live",
+        "text": "Choisis le studio ou la diffusion à distance, puis un créneau."
+      },
+      "s2": {
+        "title": "Colle ton lien",
+        "text": "Pendant la fenêtre de validation, soumets le lien de ton live TikTok."
+      },
+      "s3": {
+        "title": "Sois vu",
+        "text": "Une fois validé, ton live apparaît dans l'annuaire de ton pays pour la journée."
+      }
+    },
+    "shop": {
+      "title": "Les produits des vendeurs",
+      "subtitle": "Un coup de cœur ? Commande-le sur WhatsApp.",
+      "cta": "Voir OCD Shop"
+    }
+  },
+  "showcase": {
+    "verified": "Vendeur vérifié",
+    "liveNow": "En direct maintenant",
+    "noLive": "Pas en direct pour le moment",
+    "watch": "Voir le live",
+    "contact": "Écrire sur WhatsApp",
+    "waMessage": "Bonjour {shop}, je vous contacte depuis OCD Live."
+  },
+  "shop": {
+    "title": "OCD Shop",
+    "subtitle": "Les produits des vendeurs africains d'OCD Live. Choisis un article, puis commande-le par WhatsApp : aucun paiement sur le site.",
+    "catalogue": "Catalogue",
+    "filters": {
+      "label": "Filtrer les produits",
+      "search": "Recherche",
+      "country": "Pays",
+      "city": "Ville",
+      "category": "Catégorie",
+      "min": "Prix min.",
+      "max": "Prix max.",
+      "all": "Tous",
+      "apply": "Filtrer",
+      "reset": "Effacer les filtres"
+    },
+    "count": "{count, plural, =0 {Aucun produit} one {# produit} other {# produits}}",
+    "empty": "Aucun produit ne correspond pour l'instant.",
+    "sellCta": "Tu es vendeur ? Ajoute tes produits",
+    "note": "Le paiement et la livraison se règlent directement avec le vendeur sur WhatsApp.",
+    "stock": "{count} en stock",
+    "soldOut": "Épuisé",
+    "verified": "Vendeur vérifié",
+    "order": {
+      "cta": "Commander",
+      "quantity": "Quantité",
+      "less": "Moins",
+      "more": "Plus",
+      "message": "Bonjour, je souhaite commander {qty} × {name} ({price}), soit {total}. Vu sur OCD Shop."
+    },
+    "lowStock": "Plus que {count}",
+    "hero": {
+      "label": "À la une",
+      "eyebrow": "Nouveau · OCD Shop",
+      "text": "Découvre les produits des vendeurs d'Afrique vus en live et commande-les directement sur WhatsApp.",
+      "cta": "Voir le catalogue",
+      "sellTitle": "Tu vends ?",
+      "sellText": "Mets tes produits en ligne en quelques secondes : nom, prix, photo.",
+      "sellCta": "Ajouter mes produits"
+    },
+    "sections": {
+      "items": "{count, plural, =0 {Aucun produit} one {# produit} other {# produits}}",
+      "freshTitle": "Nouveautés de la semaine",
+      "freshSub": "Les derniers produits ajoutés par les vendeurs.",
+      "byCategory": "Parcourir par catégorie",
+      "byCategorySub": "Mode, beauté, maison, nourriture : trouve vite ce qu'il te faut.",
+      "popular": "Tous les produits",
+      "popularSub": "Filtre par pays, ville, catégorie et prix.",
+      "more": "Voir plus de produits",
+      "cheapTitle": "Petits prix",
+      "cheapSub": "Des produits à 5 000 F ou moins.",
+      "seeAll": "Tout voir",
+      "shopsTitle": "Boutiques à suivre",
+      "shopsSub": "Les vendeurs qui ont le plus de produits en ligne.",
+      "viewShop": "Voir la boutique",
+      "reassure": "Nos engagements",
+      "reassureItems": {
+        "wa": {
+          "title": "Commande sur WhatsApp",
+          "text": "Un message prérempli part chez le vendeur : produit, quantité et prix."
+        },
+        "verified": {
+          "title": "Vendeurs identifiés",
+          "text": "Chaque boutique est liée à un numéro WhatsApp vérifié par code."
+        },
+        "direct": {
+          "title": "Paiement avec le vendeur",
+          "text": "Prix, paiement et livraison se règlent directement avec lui, sans passer par le site."
+        }
+      }
+    },
+    "detail": {
+      "breadcrumb": "Fil d'Ariane",
+      "available": "Disponible",
+      "soldBy": "Vendu par",
+      "howTitle": "Comment commander",
+      "how1": "Tu choisis la quantité et tu touches « Commander » : WhatsApp s'ouvre avec ton message prêt.",
+      "how2": "Tu confirmes avec le vendeur le paiement et la livraison.",
+      "how3": "Tu reçois ton produit, directement du vendeur.",
+      "others": "Autres produits de {shop}",
+      "similar": "Produits similaires",
+      "similarSub": "Par défaut dans la même catégorie : change la catégorie, le pays ou le prix.",
+      "similarEmpty": "Aucun produit similaire avec ces filtres."
+    }
+  }
+}

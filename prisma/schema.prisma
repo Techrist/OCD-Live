@@ -1,0 +1,411 @@
+// Modèle de données — section 17 du cahier des charges (19 entités).
+// Toutes les entités ont id (cuid), createdAt et updatedAt.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  SELLER
+  VALIDATOR
+  ASSISTANT
+  STUDIO
+  ADMIN
+}
+
+enum PackageMode {
+  ONSITE
+  REMOTE
+  BOTH
+}
+
+enum BookingMode {
+  ONSITE
+  REMOTE
+}
+
+enum SlotStatus {
+  OPEN
+  CLOSED
+}
+
+enum BookingStatus {
+  DRAFT
+  HELD
+  CONFIRMED
+  EXPIRED
+  CANCELLED
+  COMPLETED
+  NO_SHOW
+}
+
+enum PaymentMethod {
+  ORANGE_MONEY
+  MTN_MOMO
+  MOOV
+  TMONEY
+  WAVE
+  CARD
+  CASH // paiement au studio, validé par un admin (PAY-07)
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+}
+
+enum SubscriptionStatus {
+  PENDING // en attente de paiement
+  ACTIVE
+  EXPIRED
+  CANCELLED
+}
+
+enum SubmissionStatus {
+  PENDING
+  PUBLISHED
+  REJECTED
+  ARCHIVED
+}
+
+model User {
+  id          String   @id @default(cuid())
+  phone       String   @unique // E.164
+  name        String?
+  role        Role     @default(SELLER)
+  countryCode String?
+  city        String?
+  locale      String   @default("fr")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  country       Country?         @relation(fields: [countryCode], references: [code])
+  sellerProfile SellerProfile?
+  bookings      Booking[]        @relation("BookingSeller")
+  assisted      Booking[]        @relation("BookingAssistant")
+  credits       Credit[]
+  subscriptions Subscription[]
+  submissions   LiveSubmission[] @relation("SubmissionSeller")
+  validated     LiveSubmission[] @relation("SubmissionValidator")
+  products      Product[]
+  auditLogs     AuditLog[]
+}
+
+model OtpCode {
+  id          String    @id @default(cuid())
+  phone       String
+  codeHash    String
+  expiresAt   DateTime // 5 min
+  attempts    Int       @default(0) // 5 maximum
+  lockedUntil DateTime? // blocage de 15 min au 6e code faux
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([phone])
+}
+
+model SellerProfile {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  slug        String   @unique // page publique /v/[slug]
+  shopName    String
+  activity    String
+  categoryId  String
+  description String?
+  photoUrl    String?
+  verified    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id])
+}
+
+model Country {
+  id        String   @id @default(cuid())
+  code      String   @unique // ISO-2
+  name      String
+  dialCode  String
+  currency  String
+  timezone  String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users       User[]
+  submissions LiveSubmission[]
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  icon      String // nom d'icône lucide-react
+  order     Int      @default(0)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sellers     SellerProfile[]
+  submissions LiveSubmission[]
+  products    Product[]
+}
+
+model Package {
+  id                   String      @id @default(cuid())
+  slug                 String      @unique
+  name                 String
+  mode                 PackageMode @default(BOTH)
+  durationMinutes      Int
+  liveCount            Int         @default(1)
+  price                Int // en unité entière de la devise (FCFA)
+  currency             String      @default("XOF")
+  features             String[]
+  includesAnnouncement Boolean     @default(false)
+  highlighted          Boolean     @default(false)
+  quoteOnly            Boolean     @default(false) // « sur devis »
+  order                Int         @default(0)
+  active               Boolean     @default(true)
+  createdAt            DateTime    @default(now())
+  updatedAt            DateTime    @updatedAt
+
+  bookings Booking[]
+  credits  Credit[]
+}
+
+model Slot {
+  id        String      @id @default(cuid())
+  startsAt  DateTime // UTC
+  endsAt    DateTime // UTC
+  mode      BookingMode
+  capacity  Int
+  status    SlotStatus  @default(OPEN)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  bookings Booking[]
+
+  @@unique([startsAt, mode])
+  @@index([startsAt])
+}
+
+model Booking {
+  id            String        @id @default(cuid())
+  reference     String        @unique // OCD-2026-000123
+  sellerId      String
+  slotId        String
+  packageId     String
+  mode          BookingMode
+  status        BookingStatus @default(DRAFT)
+  holdExpiresAt DateTime?
+  amount        Int
+  currency      String        @default("XOF")
+  assistantId   String?
+  productSheet  Json?
+  checkInAt     DateTime?
+  cancelReason  String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  seller    User      @relation("BookingSeller", fields: [sellerId], references: [id])
+  assistant User?     @relation("BookingAssistant", fields: [assistantId], references: [id])
+  slot      Slot      @relation(fields: [slotId], references: [id])
+  package   Package   @relation(fields: [packageId], references: [id])
+  payments  Payment[]
+
+  @@index([slotId, status])
+  @@index([sellerId])
+}
+
+model Credit {
+  id        String   @id @default(cuid())
+  sellerId  String
+  packageId String
+  total     Int
+  remaining Int
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  seller  User    @relation(fields: [sellerId], references: [id])
+  package Package @relation(fields: [packageId], references: [id])
+}
+
+model Payment {
+  id             String        @id @default(cuid())
+  bookingId      String?
+  subscriptionId String?
+  provider       String
+  method         PaymentMethod
+  amount         Int
+  currency       String        @default("XOF")
+  status         PaymentStatus @default(PENDING)
+  providerRef    String        @unique
+  payerPhone     String
+  raw            Json?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  booking      Booking?      @relation(fields: [bookingId], references: [id])
+  subscription Subscription? @relation(fields: [subscriptionId], references: [id])
+  receipt      Receipt?
+}
+
+model Receipt {
+  id        String   @id @default(cuid())
+  paymentId String   @unique
+  number    String   @unique // séquentiel par année
+  pdfKey    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  payment Payment @relation(fields: [paymentId], references: [id])
+}
+
+model Subscription {
+  id         String             @id @default(cuid())
+  sellerId   String
+  status     SubscriptionStatus @default(ACTIVE)
+  startsAt   DateTime
+  endsAt     DateTime
+  autoRemind Boolean            @default(true)
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+
+  seller   User      @relation(fields: [sellerId], references: [id])
+  payments Payment[]
+}
+
+model LiveSubmission {
+  id            String           @id @default(cuid())
+  sellerId      String
+  url           String
+  platform      String // TIKTOK, FACEBOOK, INSTAGRAM, YOUTUBE
+  countryCode   String
+  categoryId    String
+  status        SubmissionStatus @default(PENDING)
+  rejectReason  String?
+  validatedById String?
+  publishedAt   DateTime?
+  expiresAt     DateTime?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  seller    User     @relation("SubmissionSeller", fields: [sellerId], references: [id])
+  validator User?    @relation("SubmissionValidator", fields: [validatedById], references: [id])
+  country   Country  @relation(fields: [countryCode], references: [code])
+  category  Category @relation(fields: [categoryId], references: [id])
+
+  @@index([status, countryCode, categoryId])
+}
+
+model ValidationWindow {
+  id        String   @id @default(cuid())
+  label     String
+  startTime String // HH:mm, heure de Lomé
+  endTime   String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// V2 (shop)
+model Product {
+  id         String   @id @default(cuid())
+  sellerId   String
+  name       String
+  price      Int
+  currency   String   @default("XOF")
+  photoKey   String?
+  stock      Int?
+  categoryId String
+  active     Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  seller   User     @relation(fields: [sellerId], references: [id])
+  category Category @relation(fields: [categoryId], references: [id])
+}
+
+// V2 (ANN-10)
+model Follow {
+  id            String   @id @default(cuid())
+  followerPhone String
+  sellerId      String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@unique([followerPhone, sellerId])
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  channel   String // whatsapp | sms | email | backoffice
+  to        String
+  template  String
+  payload   Json
+  status    String    @default("PENDING")
+  error     String?
+  sentAt    DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?
+  action    String
+  entity    String
+  entityId  String
+  data      Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  actor User? @relation(fields: [actorId], references: [id])
+}
+
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Compteurs de la vitrine et de l'annuaire (ANN-16) : un événement par visiteur, par jour et par type.
+enum StatType {
+  VIEW
+  LIVE_CLICK
+  WHATSAPP_CLICK
+}
+
+model StatEvent {
+  id        String   @id @default(cuid())
+  sellerId  String
+  type      StatType
+  visitorId String
+  day       String // AAAA-MM-JJ
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([sellerId, type, visitorId, day])
+  @@index([sellerId, day])
+}
+
+// Liste d'attente sur un créneau complet (RES-09).
+model WaitlistEntry {
+  id        String   @id @default(cuid())
+  slotId    String
+  sellerId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([slotId, sellerId])
+}

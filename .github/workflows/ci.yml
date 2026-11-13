@@ -1,0 +1,25 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env: { POSTGRES_USER: ocd, POSTGRES_PASSWORD: ocd, POSTGRES_DB: ocdlive }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U ocd" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://ocd:ocd@localhost:5432/ocdlive
+      SESSION_SECRET: ci-secret-ci-secret-ci-secret-0123456789
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npx prisma migrate deploy
+      - run: npx prisma db seed
+      - run: npm test

@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ocd
+      POSTGRES_PASSWORD: ocd
+      POSTGRES_DB: ocdlive
+    ports:
+      - "5432:5432"
+    volumes:
+      - ocd_pgdata:/var/lib/postgresql/data
+volumes:
+  ocd_pgdata:
