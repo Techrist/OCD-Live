@@ -143,7 +143,7 @@ async function main() {
     const dial = COUNTRIES.find((c) => c[0] === cc)![2];
     const seller = await prisma.user.create({ data: { phone: `${dial}9100${String(i).padStart(4, "0")}`, name: shop, role: "SELLER", countryCode: cc, city } });
     await prisma.sellerProfile.create({ data: { userId: seller.id, slug: `demo-${i + 1}`, shopName: shop, activity: shop, categoryId: categories[cat], verified: i % 3 === 0 } });
-    for (const prod of demoProductsFor(cat)) {
+    for (const prod of demoProductsFor(cat, i)) {
       await prisma.product.create({ data: { sellerId: seller.id, categoryId: categories[cat], ...prod } });
     }
     await prisma.liveSubmission.create({

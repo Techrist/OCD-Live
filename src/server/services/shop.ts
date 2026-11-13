@@ -36,7 +36,7 @@ async function toProduct(r: Row): Promise<ShopProduct> {
     currency: r.currency,
     stock: r.stock,
     active: r.active,
-    photoUrl: r.photoKey ? await getStorage().getUrl(r.photoKey) : null,
+    photoUrl: r.photoKey ? (r.photoKey.startsWith("/") ? r.photoKey : await getStorage().getUrl(r.photoKey)) : null,
     category: r.category,
     seller: {
       id: r.seller.id,
@@ -137,7 +137,7 @@ export async function deleteProduct(sellerId: string, id: string) {
   const product = await db.product.findFirst({ where: { id, sellerId } });
   if (!product) return { ok: false };
   await db.product.delete({ where: { id } });
-  if (product.photoKey) await getStorage().remove(product.photoKey).catch(() => {});
+  if (product.photoKey && !product.photoKey.startsWith("/")) await getStorage().remove(product.photoKey).catch(() => {});
   return { ok: true };
 }
 
