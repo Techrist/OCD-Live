@@ -23,7 +23,7 @@ test("OCD Shop : le catalogue s'affiche et se filtre par pays, catégorie et pri
   await page.goto("/fr/shop");
   await page.locator("#catalogue").getByLabel("Catégorie").selectOption({ index: 1 });
   // Soumission directe : les images chargées au-dessus décalent la page sur mobile et faussent le clic.
-  await page.locator("#catalogue form").evaluate((f) => (f as HTMLFormElement).requestSubmit());
+  await page.locator("#catalogue form").first().evaluate((f) => (f as HTMLFormElement).requestSubmit());
   await expect(page).toHaveURL(/categorie=/);
   await expect(cards.first()).toBeVisible();
 });

@@ -109,7 +109,7 @@ export default async function ShopPage({ params, searchParams }: { params: Promi
       )}
 
       {!active && (
-        <section aria-labelledby="cats" className="band flex flex-col gap-8 bg-white py-12 md:py-16">
+        <section aria-labelledby="cats" className="flex flex-col gap-8 bg-white px-[max(1.25rem,calc((100%-90rem)/2))] py-12 md:py-16">
           <div className="mx-auto flex max-w-2xl flex-col items-center gap-2 text-center">
             <h2 id="cats" className="text-3xl">{t("sections.byCategory")}</h2>
             <p className="text-lg text-ink/70">{t("sections.byCategorySub")}</p>
@@ -128,29 +128,36 @@ export default async function ShopPage({ params, searchParams }: { params: Promi
         </section>
       )}
 
-      <section id="catalogue" aria-labelledby="catalogue-title" className={`band flex scroll-mt-24 flex-col gap-6 py-12 md:py-16 ${active ? "bg-white" : "bg-[#fffaf2]"}`}>
+      <section id="catalogue" aria-labelledby="catalogue-title" className={`flex scroll-mt-24 flex-col gap-6 px-[max(1.25rem,calc((100%-90rem)/2))] py-12 md:py-16 ${active ? "bg-white" : "bg-[#fffaf2]"}`}>
         <div className="flex flex-col gap-1">
           <h2 id="catalogue-title" className="text-3xl">{t("sections.popular")}</h2>
           {!active && <p className="text-lg text-ink/70">{t("sections.popularSub")}</p>}
         </div>
-        <ShopFilterForm
-          filters={filters}
-          countries={countryOptions.map((c) => ({ code: c.code, name: c.name }))}
-          categories={categoryOptions.map((c) => ({ slug: c.slug, name: c.name }))}
-          cities={facets.cities}
-          active={active}
-        />
-        <p className="font-bold text-ink/70" aria-live="polite">{t("count", { count: shown.length })}</p>
-        {shown.length === 0 ? (
-          <div className="soft flex flex-col items-start gap-3 rounded-3xl p-6">
-            <p className="font-semibold">{t("empty")}</p>
-            <Link href="/espace/produits" className="font-bold text-copper-800 underline">{t("sellCta")} →</Link>
+        <div className="grid items-start gap-6 lg:grid-cols-[18rem_1fr] lg:gap-8">
+          <aside aria-label={t("filters.label")} className="rounded-3xl border border-ink/10 bg-white p-5 lg:sticky lg:top-24">
+            <ShopFilterForm
+              filters={filters}
+              countries={countryOptions.map((c) => ({ code: c.code, name: c.name }))}
+              categories={categoryOptions.map((c) => ({ slug: c.slug, name: c.name }))}
+              cities={facets.cities}
+              active={active}
+              vertical
+            />
+          </aside>
+          <div className="flex min-w-0 flex-col gap-4">
+            <p className="font-bold text-ink/70" aria-live="polite">{t("count", { count: shown.length })}</p>
+            {shown.length === 0 ? (
+              <div className="soft flex flex-col items-start gap-3 rounded-3xl p-6">
+                <p className="font-semibold">{t("empty")}</p>
+                <Link href="/espace/produits" className="font-bold text-copper-800 underline">{t("sellCta")} →</Link>
+              </div>
+            ) : (
+              <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
+                {shown.map((p) => <ProductCard key={p.id} product={p} />)}
+              </ul>
+            )}
           </div>
-        ) : (
-          <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {shown.map((p) => <ProductCard key={p.id} product={p} />)}
-          </ul>
-        )}
+        </div>
         {hasMore && (
           <Link href={`/shop${shopQuery(filters)}${shopQuery(filters) ? "&" : "?"}n=${pages + 1}#catalogue`} scroll={false} className="mx-auto flex min-h-14 items-center rounded-2xl border-2 border-copper px-8 text-lg font-bold text-copper-800">{t("sections.more")}</Link>
         )}
