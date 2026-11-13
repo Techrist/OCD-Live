@@ -161,7 +161,7 @@ export async function StudioLive() {
     <section aria-labelledby="studio" className="band flex flex-col gap-8 bg-[#fffaf2] py-14 md:py-20">
       <Heading id="studio" title={t("title")} />
       <div className="grid items-center gap-6 md:grid-cols-2">
-        <div className="relative aspect-[3/2] overflow-hidden rounded-2xl"><Image src="/images/studio.webp" alt="" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" /></div>
+        <a href="https://www.tiktok.com/@houseofchallenge" target="_blank" rel="noopener noreferrer" className="relative grid aspect-[3/2] place-items-center overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-ink/10"><Image src="/images/hoc-logo.webp" alt="House of Challenge" width={320} height={320} sizes="20rem" className="size-60 object-contain md:size-72" /></a>
         <div className="flex flex-col gap-4">
           <p className="text-lg leading-relaxed text-ink/80">{t("text")}</p>
           <a href="https://www.tiktok.com/@houseofchallenge" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 w-fit items-center gap-2 rounded-xl border border-ink/15 px-4 font-bold">
