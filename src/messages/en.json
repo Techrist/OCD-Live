@@ -479,7 +479,16 @@
     "or": "or",
     "google": "Continue with Google",
     "phoneHint": "First sign-in: this number is used for orders and reminders.",
-    "googleWait": "Signing you in…"
+    "googleWait": "Signing you in…",
+    "subtitle": "Get a code by email, no password. A new account is created automatically on your first sign-in.",
+    "secure": "Your email is only used to sign you in. We never write to ask you for a code.",
+    "panel": {
+      "title": "Your seller space is waiting.",
+      "text": "Book your live, follow your statistics and put your products online from one place.",
+      "p1": "Book and reschedule lives in a few taps",
+      "p2": "Your showcase and lives visible in the directory",
+      "p3": "Your products in OCD Shop, ordered on WhatsApp"
+    }
   },
   "espace": {
     "title": "My space",

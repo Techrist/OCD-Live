@@ -479,7 +479,16 @@
     "or": "ou",
     "google": "Continuer avec Google",
     "phoneHint": "Première connexion : ce numéro sert aux commandes et aux rappels.",
-    "googleWait": "Connexion en cours…"
+    "googleWait": "Connexion en cours…",
+    "subtitle": "Reçois un code par e-mail, sans mot de passe. Un nouveau compte se crée tout seul à ta première connexion.",
+    "secure": "Ton e-mail sert uniquement à te connecter. On ne t'écrit jamais pour te demander un code.",
+    "panel": {
+      "title": "Ton espace vendeur t'attend.",
+      "text": "Réserve ton live, suis tes statistiques et mets tes produits en ligne depuis un seul endroit.",
+      "p1": "Réserve et reporte tes lives en quelques touches",
+      "p2": "Ta vitrine et tes lives visibles dans l'annuaire",
+      "p3": "Tes produits dans OCD Shop, commandés sur WhatsApp"
+    }
   },
   "espace": {
     "title": "Mon espace",
