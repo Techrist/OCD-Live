@@ -8,7 +8,7 @@ Compresse en WebP (qualité 75, moins de 150 Ko par image) pour garder l'accueil
 **Déjà en place** (importées depuis tes images, recadrées par `_brand/import_photos.py`, originaux dans `_brand/originals/`) :
 `hero-1` à `hero-5`, `cat-nourriture`, `cat-mode`, `cat-chaussures-sacs`, `cat-beaute-cheveux`, `cat-telephones-electronique`, `cat-maison`, `cat-services`.
 
-**Photos réelles fournies (à vérifier côté droits d'utilisation avant la mise en ligne)** : visuels des catégories `cat-nourriture`, `cat-beaute-cheveux`, `cat-mode`, `cat-telephones-electronique`, `cat-services`, `cat-autre` et photos des produits de démonstration (`public/images/demo/`). Restent générées par IA : `cat-chaussures-sacs`, `cat-maison`, `hero-1..5`, `step-1..3`, `why-1/2`, `cta`, `studio`.
+**Photos réelles fournies (à vérifier côté droits d'utilisation avant la mise en ligne)** : visuels des catégories `cat-nourriture`, `cat-beaute-cheveux`, `cat-mode`, `cat-telephones-electronique`, `cat-services`, `cat-autre` et photos des produits de démonstration (`public/images/demo/`). Portraits réels aussi pour `hero-1..5` et `step-1..3`. Restent générées par IA : `cat-chaussures-sacs`, `cat-maison`, `why-1/2`, `cta`, `studio`.
 
 **Images de remplacement** : `studio` (recadrage de `why-1`) et `cat-autre` (recadrage de `cta`) viennent de photos existantes ; à remplacer par de vraies photos du studio et de la catégorie « Autre » quand elles existent.
 Les prompts ci-dessous restent valables pour celles-là (et pour remplacer les autres si besoin).
