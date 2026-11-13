@@ -1,12 +1,13 @@
 import "server-only";
 import { mockStorage } from "./mock";
+import { s3Storage } from "./s3";
 import type { StorageProvider } from "./types";
 
-/** STORAGE_PROVIDER=mock (défaut). Le connecteur Cloudflare R2 / S3 se branche ici plus tard. */
+/** STORAGE_PROVIDER=mock (défaut : dossier local) ou s3 (Neon Object Storage, Cloudflare R2 ou tout service compatible S3). */
 export function getStorage(): StorageProvider {
-  if ((process.env.STORAGE_PROVIDER ?? "mock") !== "mock") {
-    throw new Error("Aucun connecteur de stockage réel n'est encore branché (S3 / Cloudflare R2).");
-  }
+  const provider = process.env.STORAGE_PROVIDER ?? "mock";
+  if (provider === "s3") return s3Storage;
+  if (provider !== "mock") throw new Error(`STORAGE_PROVIDER inconnu : ${provider} (valeurs : mock, s3)`);
   return mockStorage;
 }
 

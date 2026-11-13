@@ -86,7 +86,7 @@ Chaque service externe passe par un adaptateur ; la variable `*_PROVIDER=mock` (
 | Paiement | `PAYMENT_PROVIDER`, `PAYMENT_API_KEY`, `PAYMENT_WEBHOOK_SECRET` | Ajouter un connecteur dans `src/server/adapters/payment/` (interface `PaymentProvider`) et le brancher dans `index.ts`. Déclarer l'URL du webhook `/api/webhooks/payment/<provider>` chez l'agrégateur. |
 | WhatsApp / SMS | `MESSAGING_PROVIDER`, `WHATSAPP_API_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID`, `SMS_API_KEY` | Connecteur `MessagingProvider` dans `src/server/adapters/messaging/` ; modèles de messages à faire approuver (otp, booking_confirmed, reminder_d1, reminder_h1, team_new_booking). |
 | E-mail | `EMAIL_PROVIDER`, `EMAIL_API_KEY` | Adaptateur à créer (non utilisé par le MVP). |
-| Fichiers | `STORAGE_PROVIDER`, `S3_*` | Adaptateur réel à créer (S3 / Cloudflare R2) ; en simulation, les photos produits vont dans `./.uploads` (ignoré par git). |
+| Fichiers | `STORAGE_PROVIDER`, `S3_*` | `STORAGE_PROVIDER=s3` : Neon Object Storage (ou R2 / S3) via `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_ENDPOINT_URL_S3`, `AWS_REGION` et `S3_BUCKET` (`assets` par défaut). En simulation (`mock`), les photos vont dans `./.uploads` (ignoré par git). |
 
 Autres réglages de production : `SESSION_SECRET` (32 caractères minimum), `CRON_SECRET`, `APP_URL`, `OCD_WHATSAPP_NUMBER`.
 Les prix, durées, horaires, délais et l'adresse du studio se modifient dans `/admin` (packages, paramètres), sans toucher au code.

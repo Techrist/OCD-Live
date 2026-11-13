@@ -1,4 +1,4 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { StorageProvider } from "./types";
 
@@ -21,6 +21,14 @@ export const mockStorage: StorageProvider = {
   },
   async getUrl(key) {
     return `/api/files/${key}`;
+  },
+  async get(key) {
+    try {
+      const ext = key.split(".").pop() as string;
+      return { body: new Uint8Array(await readFile(filePath(key))), contentType: { jpg: "image/jpeg", png: "image/png", webp: "image/webp" }[ext] ?? "application/octet-stream" };
+    } catch {
+      return null;
+    }
   },
   async remove(key) {
     await rm(filePath(key), { force: true });
