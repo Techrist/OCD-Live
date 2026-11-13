@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LiveCard } from "@/components/lives/live-card";
+import { liveImage } from "@/lib/live-image";
 import { Flag } from "@/components/ui/flag";
 import { Link } from "@/i18n/navigation";
 import { shuffle } from "@/lib/shuffle";
@@ -37,7 +38,7 @@ export default async function CountryLivesPage({ params, searchParams }: { param
   const chip = "soft inline-flex min-h-12 items-center rounded-full px-4 font-bold whitespace-nowrap";
 
   return (
-    <div className="mx-auto flex w-full max-w-md flex-col gap-5 px-5 pt-2">
+    <div className="mx-auto flex w-full max-w-5xl flex-col gap-5 px-5 pt-2">
       <div className="flex items-center gap-3">
         <Flag code={country.code} className="h-8 w-12 rounded-sm ring-1 ring-ink/30" />
         <h1 className="text-[1.7rem] leading-tight font-semibold">{country.name}</h1>
@@ -56,7 +57,7 @@ export default async function CountryLivesPage({ params, searchParams }: { param
       {shown.length === 0 ? (
         <p className="soft rounded-3xl p-5 font-semibold">{t("empty")}</p>
       ) : (
-        <ul className="flex flex-col gap-4">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {shown.map((l) => (
             <LiveCard
               key={l.id}
@@ -64,6 +65,7 @@ export default async function CountryLivesPage({ params, searchParams }: { param
               live={{
                 id: l.id, sellerId: l.seller.id, shop: l.seller.sellerProfile?.shopName ?? "—", city: l.seller.city,
                 category: l.category, slug: l.seller.sellerProfile?.slug ?? null, verified: !!l.seller.sellerProfile?.verified,
+                image: liveImage({ profilePhoto: l.seller.sellerProfile?.photoUrl, productPhotoKey: l.seller.products[0]?.photoKey, categorySlug: l.category.slug }).src,
               }}
             />
           ))}

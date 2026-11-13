@@ -95,8 +95,14 @@ export function publishedLives(filter: { countryCode?: string; categoryId?: stri
   return db.liveSubmission.findMany({
     where: { ...publishedWhere(now), ...(filter.countryCode ? { countryCode: filter.countryCode } : {}), ...(filter.categoryId ? { categoryId: filter.categoryId } : {}) },
     include: {
-      category: { select: { id: true, name: true, icon: true } },
-      seller: { select: { id: true, phone: true, city: true, sellerProfile: { select: { shopName: true, slug: true, verified: true, photoUrl: true } } } },
+      category: { select: { id: true, slug: true, name: true, icon: true } },
+      seller: {
+        select: {
+          id: true, phone: true, city: true,
+          sellerProfile: { select: { shopName: true, slug: true, verified: true, photoUrl: true } },
+          products: { where: { active: true, photoKey: { not: null } }, orderBy: { createdAt: "desc" }, take: 1, select: { photoKey: true } },
+        },
+      },
     },
   });
 }

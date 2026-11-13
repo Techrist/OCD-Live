@@ -668,7 +668,23 @@
     "productsHint": "Name, price, photo",
     "submitHint": "Paste your link",
     "showcaseHint": "Your public page",
-    "statsHint": "Views and clicks"
+    "statsHint": "Views and clicks",
+    "photo": {
+      "title": "Your account photo",
+      "text": "It is the preview when your live shows up in the live now list, and the header of your showcase. Without a photo, one of your products is shown.",
+      "alt": "Your account photo",
+      "add": "Add a photo",
+      "change": "Change photo",
+      "remove": "Remove photo",
+      "saved": "Photo saved.",
+      "errors": {
+        "network": "Can't connect. Try again.",
+        "INVALID_IMAGE": "Photo not recognised: use a JPG, PNG or WebP file.",
+        "TOO_BIG": "Photo too large (3 MB maximum).",
+        "NO_PROFILE": "Create your seller profile first.",
+        "FORBIDDEN": "Sign in as a seller."
+      }
+    }
   },
   "admin": {
     "title": "Back-office",

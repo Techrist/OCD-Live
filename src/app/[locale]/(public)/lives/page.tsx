@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArrowRight, CalendarCheck, Eye, Link2, Radio } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LiveCard } from "@/components/lives/live-card";
+import { liveImage } from "@/lib/live-image";
 import { ProductCard } from "@/components/shop/product-card";
 import { Flag } from "@/components/ui/flag";
 import { Link } from "@/i18n/navigation";
@@ -80,6 +81,7 @@ export default async function LivesPage({ params }: { params: Promise<{ locale: 
                   id: l.id, sellerId: l.seller.id, shop: l.seller.sellerProfile?.shopName ?? "—", city: l.seller.city,
                   category: l.category, slug: l.seller.sellerProfile?.slug ?? null, verified: !!l.seller.sellerProfile?.verified,
                   country: { code: l.countryCode, name: names.get(l.countryCode) ?? l.countryCode },
+                  image: liveImage({ profilePhoto: l.seller.sellerProfile?.photoUrl, productPhotoKey: l.seller.products[0]?.photoKey, categorySlug: l.category.slug }).src,
                 }}
               />
             ))}

@@ -33,7 +33,12 @@ export default async function ShowcasePage({ params }: { params: Promise<{ local
     <div className="mx-auto flex w-full max-w-md flex-col gap-5 px-5 pt-2">
       <ViewBeacon slug={slug} />
       <section className="soft flex flex-col gap-3 rounded-[2.5rem] p-6">
-        <span aria-hidden="true" className="grid size-16 place-items-center rounded-full grad-btn"><CategoryIcon name={profile.category.icon} className="size-8" /></span>
+        {profile.photoUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={profile.photoUrl} alt="" className="size-24 rounded-full object-cover ring-2 ring-copper" />
+        ) : (
+          <span aria-hidden="true" className="grid size-16 place-items-center rounded-full grad-btn"><CategoryIcon name={profile.category.icon} className="size-8" /></span>
+        )}
         <h1 className="text-[1.7rem] leading-tight font-semibold">{profile.shopName}</h1>
         {profile.verified && <p className="flex items-center gap-1 font-bold text-copper-800"><BadgeCheck aria-hidden="true" className="size-5" /> {t("verified")}</p>}
         <p className="font-semibold">{profile.activity}</p>

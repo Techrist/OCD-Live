@@ -668,7 +668,23 @@
     "productsHint": "Nom, prix, photo",
     "submitHint": "Colle ton lien",
     "showcaseHint": "Ta page publique",
-    "statsHint": "Vues et clics"
+    "statsHint": "Vues et clics",
+    "photo": {
+      "title": "Photo de ton compte",
+      "text": "Elle sert d'aperçu quand ton live apparaît dans les directs en cours, et en tête de ta vitrine. Sans photo, on affiche l'un de tes produits.",
+      "alt": "Photo de ton compte",
+      "add": "Ajouter une photo",
+      "change": "Changer la photo",
+      "remove": "Retirer la photo",
+      "saved": "Photo enregistrée.",
+      "errors": {
+        "network": "Connexion impossible. Réessaie.",
+        "INVALID_IMAGE": "Photo non reconnue : utilise un fichier JPG, PNG ou WebP.",
+        "TOO_BIG": "Photo trop lourde (3 Mo maximum).",
+        "NO_PROFILE": "Crée d'abord ton profil vendeur.",
+        "FORBIDDEN": "Connecte-toi en tant que vendeur."
+      }
+    }
   },
   "admin": {
     "title": "Back-office",

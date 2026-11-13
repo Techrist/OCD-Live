@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ProfilePhotoForm } from "@/components/espace/profile-photo-form";
 import { Link } from "@/i18n/navigation";
 import { updateShowcaseAction } from "@/server/actions/seller";
 import { requireRole } from "@/server/auth/session";
@@ -19,6 +20,7 @@ export default async function MyShowcasePage({ params }: { params: Promise<{ loc
     <div className="mx-auto flex w-full max-w-3xl flex-col gap-5 px-5 pt-2">
       <h1 className="text-2xl font-semibold">{t("title")}</h1>
       <Link href={`/v/${profile.slug}`} className="font-bold text-copper-800 underline">{t("view")} →</Link>
+      <ProfilePhotoForm current={profile.photoUrl} />
       <form action={updateShowcaseAction} className="flex flex-col gap-4">
         <label className="flex flex-col gap-1 font-bold">{t("shop")}<input name="shopName" required defaultValue={profile.shopName} className={field} /></label>
         <label className="flex flex-col gap-1 font-bold">{t("activity")}<input name="activity" required defaultValue={profile.activity} className={field} /></label>
