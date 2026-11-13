@@ -1004,7 +1004,18 @@
     "noLive": "Not live at the moment",
     "watch": "Watch live",
     "contact": "Write on WhatsApp",
-    "waMessage": "Hello {shop}, I am contacting you from OCD Live."
+    "waMessage": "Hello {shop}, I am contacting you from OCD Live.",
+    "liveBadge": "Live",
+    "figures": "At a glance",
+    "productsCount": "products online",
+    "category": "Category",
+    "status": "Status",
+    "about": "About the shop",
+    "productsSub": "{shop}'s products, to order on WhatsApp.",
+    "allShop": "See all of OCD Shop",
+    "noProducts": "This shop hasn't put products online yet. Message them on WhatsApp to see their catalogue.",
+    "contactTitle": "A question for {shop}?",
+    "contactText": "Message the seller directly: products, prices, delivery."
   },
   "shop": {
     "title": "OCD Shop",
