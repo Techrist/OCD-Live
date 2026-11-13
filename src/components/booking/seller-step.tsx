@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight, BadgeCheck, MessageCircle, ShieldCheck } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { ArrowRight, BadgeCheck, Mail, ShieldCheck } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { firstIncompleteStep } from "@/lib/booking-draft";
+import { emailSchema } from "@/lib/email";
 import { phoneSchema } from "@/lib/phone";
 import { cn } from "@/lib/utils";
 import { CategoryIcon } from "@/components/ui/category-icon";
@@ -22,9 +23,11 @@ export function SellerStep({ categories, countries }: { categories: Category[]; 
   const t = useTranslations("booking.seller");
   const tl = useTranslations("login");
   const router = useRouter();
+  const locale = useLocale();
   const { draft, update, allowed } = useStepGuard("vendeur");
   const [ready, setReady] = useState(false);
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
   const [code, setCode] = useState("");
   const [devCode, setDevCode] = useState<string>();
@@ -54,7 +57,8 @@ export function SellerStep({ categories, countries }: { categories: Category[]; 
   if (!allowed || !ready) return null;
   const country = countries.find((c) => c.code === draft.countryCode);
   const phoneOk = phoneSchema.safeParse(phone).success;
-  const formOk = !!(draft.categoryId && draft.countryCode && draft.name?.trim() && draft.shopName?.trim() && phoneOk);
+  const emailOk = emailSchema.safeParse(email).success;
+  const formOk = !!(draft.categoryId && draft.countryCode && draft.name?.trim() && draft.shopName?.trim() && phoneOk && emailOk);
 
   async function post(url: string, payload: unknown) {
     setBusy(true);
@@ -71,7 +75,7 @@ export function SellerStep({ categories, countries }: { categories: Category[]; 
   }
 
   async function requestCode() {
-    const data = await post("/api/auth/otp/request", { phone });
+    const data = await post("/api/auth/otp/request", { email, locale });
     if (!data) return;
     if (data.ok) {
       setDevCode(data.devCode);
@@ -80,7 +84,7 @@ export function SellerStep({ categories, countries }: { categories: Category[]; 
   }
 
   async function verify() {
-    const data = await post("/api/auth/otp/verify", { phone, code });
+    const data = await post("/api/auth/otp/verify", { email, code, phone });
     if (!data) return;
     if (!data.ok) return setError(data.reason === "WRONG" ? tl("errors.WRONG", { n: data.attemptsLeft }) : tl(`errors.${data.reason}`));
     const saved = await post("/api/seller/profile", {
@@ -143,12 +147,16 @@ export function SellerStep({ categories, countries }: { categories: Category[]; 
               {t("phoneLabel")}
               <input type="tel" inputMode="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={country?.dialCode ?? "+228"} disabled={sent} className={field} />
             </label>
+            <label className="flex flex-col gap-1 font-bold sm:col-span-2">
+              {t("emailLabel")}
+              <input type="email" inputMode="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={sent} className={field} />
+            </label>
             <label className="flex flex-col gap-1 font-bold sm:col-span-2">{t("cityLabel")}<input value={draft.city ?? ""} onChange={(e) => update({ city: e.target.value })} className={field} /></label>
           </div>
         </section>
 
         <p className="flex items-center gap-3 rounded-2xl bg-wall-2 p-4 font-semibold">
-          <MessageCircle aria-hidden="true" className="size-6 shrink-0 text-wa" /> {t("codeInfo")}
+          <Mail aria-hidden="true" className="size-6 shrink-0 text-wa" /> {t("codeInfo")}
         </p>
         <button type="button" disabled={!formOk || busy || sent} onClick={requestCode} className={primary}>
           {t("getCode")} <ArrowRight aria-hidden="true" className="size-6" />
@@ -163,7 +171,7 @@ export function SellerStep({ categories, countries }: { categories: Category[]; 
             <p className="text-ink/80">{t("panelWaiting")}</p>
           ) : (
             <>
-              <p className="font-semibold">{tl("codeLabel", { phone })}</p>
+              <p className="font-semibold">{tl("codeLabel", { email })}</p>
               <button type="button" onClick={() => { setSent(false); setCode(""); setError(undefined); }} className="w-fit font-bold text-copper-800 underline">{t("editNumber")}</button>
               {devCode && <p className="rounded-2xl bg-amber/30 p-3 font-bold">{tl("devCode", { code: devCode })}</p>}
               <label className="flex flex-col gap-2 text-lg font-bold">

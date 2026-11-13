@@ -2,7 +2,7 @@ import { defineConfig } from "@neon/config/v1";
 
 export default defineConfig({
   // Declare your Neon services here
-  auth: true,
+  auth: true, // Google uniquement (le code par e-mail est géré par notre propre système)
   buckets: {
     // "private" is the default; use "public_read" for anonymous reads
     assets: { access: "private" },

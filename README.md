@@ -63,7 +63,7 @@ En développement, le code OTP s'affiche sous le champ de saisie.
 | SELLER | +22990000006 | vendeur béninois sans abonnement |
 
 Un numéro finissant par `0000` fait échouer le paiement simulé (pour tester « Réessayer »).
-Tout autre numéro crée un compte vendeur à la première connexion.
+Connexion : code à 6 chiffres envoyé par e-mail (ou Google). En développement le code s'affiche sous le champ. Comptes du seed : `admin@ocdlive.test`, `validateur@…`, `assistante@…`, `studio@…` (même domaine `@ocdlive.test`), vendeurs `aicha@…` et `koffi@…`. Toute autre adresse crée un compte vendeur à la première connexion (numéro WhatsApp demandé).
 
 ## Ce qui est construit
 

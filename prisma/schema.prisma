@@ -77,7 +77,8 @@ enum SubmissionStatus {
 
 model User {
   id          String   @id @default(cuid())
-  phone       String   @unique // E.164
+  phone       String   @unique // E.164 : numéro WhatsApp (commandes, rappels)
+  email       String?  @unique // identifiant de connexion (code par e-mail ou Google)
   name        String?
   role        Role     @default(SELLER)
   countryCode String?
@@ -100,7 +101,7 @@ model User {
 
 model OtpCode {
   id          String    @id @default(cuid())
-  phone       String
+  identifier  String // adresse e-mail (en minuscules)
   codeHash    String
   expiresAt   DateTime // 5 min
   attempts    Int       @default(0) // 5 maximum
@@ -108,7 +109,7 @@ model OtpCode {
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 
-  @@index([phone])
+  @@index([identifier])
 }
 
 model SellerProfile {

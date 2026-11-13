@@ -17,8 +17,10 @@ export async function loginAs(page: Page, phone: string) {
 /** Nouveau vendeur : parcours OTP réel de l'API (le code est renvoyé en développement). */
 export async function loginNewSeller(page: Page) {
   const phone = `+2376${String(Date.now()).slice(-8)}`;
-  const req = await page.request.post("/api/auth/otp/request", { data: { phone } });
-  const { devCode } = await req.json();
-  const res = await page.request.post("/api/auth/otp/verify", { data: { phone, code: devCode } });
+  const email = `e2e-${Date.now()}-${Math.floor(Math.random() * 1e4)}@ocdlive.test`;
+  const req = await page.request.post("/api/auth/otp/request", { data: { email } });
+  const { devCode, needsPhone } = await req.json();
+  expect(needsPhone).toBe(true);
+  const res = await page.request.post("/api/auth/otp/verify", { data: { email, code: devCode, phone } });
   expect((await res.json()).ok).toBe(true);
 }

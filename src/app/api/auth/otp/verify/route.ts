@@ -1,23 +1,32 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { emailSchema } from "@/lib/email";
 import { codeSchema, phoneSchema } from "@/lib/phone";
 import { verifyOtp } from "@/server/auth/otp";
 import { prismaOtpStore } from "@/server/auth/otp-store-prisma";
 import { homeFor } from "@/server/auth/roles";
 import { startSession } from "@/server/auth/session";
 import { getSecret } from "@/server/auth/session-token";
+import { createSellerAccount } from "@/server/services/accounts";
 import { db } from "@/server/db";
 
-const body = z.object({ phone: phoneSchema, code: codeSchema });
+const body = z.object({ email: emailSchema, code: codeSchema, phone: phoneSchema.optional() });
 
+// POST /api/auth/otp/verify : vérifie le code. Première connexion : le numéro WhatsApp est demandé et le compte vendeur créé.
 export async function POST(req: Request) {
   const parsed = body.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ ok: false, reason: "INVALID_INPUT" }, { status: 400 });
-  const { phone, code } = parsed.data;
+  const { email, code, phone } = parsed.data;
 
-  const result = await verifyOtp(prismaOtpStore, phone, code, getSecret());
+  // Contrôles avant de consommer le code, pour ne pas faire perdre un code valable.
+  const existing = await db.user.findUnique({ where: { email } });
+  if (!existing) {
+    if (!phone) return NextResponse.json({ ok: false, reason: "PHONE_REQUIRED" }, { status: 400 });
+    if (await db.user.findUnique({ where: { phone }, select: { id: true } })) return NextResponse.json({ ok: false, reason: "PHONE_TAKEN" }, { status: 409 });
+  }
+
+  const result = await verifyOtp(prismaOtpStore, email, code, getSecret());
   if (!result.ok) {
-    const status = result.reason === "LOCKED" ? 429 : 401;
     return NextResponse.json(
       {
         ok: false,
@@ -25,19 +34,11 @@ export async function POST(req: Request) {
         until: result.reason === "LOCKED" ? result.until : undefined,
         attemptsLeft: result.reason === "WRONG" ? result.attemptsLeft : undefined,
       },
-      { status },
+      { status: result.reason === "LOCKED" ? 429 : 401 },
     );
   }
 
-  // Compte par numéro WhatsApp : créé à la première connexion (vendeur), pays déduit de l'indicatif.
-  let user = await db.user.findUnique({ where: { phone } });
-  if (!user) {
-    const countries = await db.country.findMany({ where: { active: true } });
-    const country = countries
-      .filter((c) => phone.startsWith(c.dialCode))
-      .sort((a, b) => b.dialCode.length - a.dialCode.length)[0];
-    user = await db.user.create({ data: { phone, role: "SELLER", countryCode: country?.code } });
-  }
-  await startSession({ sub: user.id, role: user.role, phone: user.phone });
+  const user = existing ?? (await createSellerAccount({ email, phone: phone! }));
+  await startSession({ sub: user.id, role: user.role, phone: user.phone, email });
   return NextResponse.json({ ok: true, role: user.role, redirect: homeFor(user.role) });
 }

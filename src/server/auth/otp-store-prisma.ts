@@ -4,11 +4,11 @@ import type { OtpStore } from "./otp";
 
 export const prismaOtpStore: OtpStore = {
   create: (data) => db.otpCode.create({ data }),
-  latest: (phone) => db.otpCode.findFirst({ where: { phone }, orderBy: { createdAt: "desc" } }),
-  countSince: (phone, since) => db.otpCode.count({ where: { phone, createdAt: { gte: since } } }),
-  async activeLock(phone, now) {
+  latest: (identifier) => db.otpCode.findFirst({ where: { identifier }, orderBy: { createdAt: "desc" } }),
+  countSince: (identifier, since) => db.otpCode.count({ where: { identifier, createdAt: { gte: since } } }),
+  async activeLock(identifier, now) {
     const row = await db.otpCode.findFirst({
-      where: { phone, lockedUntil: { gt: now } },
+      where: { identifier, lockedUntil: { gt: now } },
       orderBy: { lockedUntil: "desc" },
     });
     return row?.lockedUntil ?? null;

@@ -3,16 +3,18 @@ import { expect, test } from "@playwright/test";
 // Parcours complet : accueil -> profil vendeur + OTP -> offre -> créneau -> paiement simulé -> confirmation.
 test("un vendeur réserve et paie un live à distance de bout en bout", async ({ page }) => {
   const phone = `+2376${String(Date.now()).slice(-8)}`;
+  const email = `e2e-${Date.now()}@ocdlive.test`;
 
   await page.goto("/fr");
   await page.getByRole("link", { name: /depuis chez moi/ }).click();
 
-  // Écran 2 : catégorie, coordonnées, puis code WhatsApp (affiché en développement).
+  // Écran 2 : catégorie, coordonnées, puis code reçu par e-mail (affiché en développement).
   await page.getByRole("button", { name: "Nourriture" }).click();
   await page.getByLabel("Ton nom complet").fill("Test Playwright");
   await page.getByLabel("Nom de ta boutique").fill("Boutique E2E");
   await page.getByLabel("Ton pays").selectOption({ label: "Cameroun (+237)" });
   await page.getByLabel("Ton numéro WhatsApp", { exact: true }).fill(phone);
+  await page.getByLabel("Ton adresse e-mail", { exact: true }).fill(email);
   await page.getByRole("button", { name: "Recevoir mon code" }).click();
   const hint = await page.getByText(/Code de test : \d{6}/).textContent();
   await page.getByLabel("Entre ton code à 6 chiffres").fill(hint!.match(/\d{6}/)![0]);

@@ -15,13 +15,13 @@ function memoryStore(): OtpStore & { rows: (OtpRecord & { createdAt: Date })[] }
       return r;
     },
     async latest(phone) {
-      return [...rows].reverse().find((r) => r.phone === phone) ?? null;
+      return [...rows].reverse().find((r) => r.identifier === phone) ?? null;
     },
     async countSince(phone, since) {
-      return rows.filter((r) => r.phone === phone && r.createdAt >= since).length;
+      return rows.filter((r) => r.identifier === phone && r.createdAt >= since).length;
     },
     async activeLock(phone, now) {
-      return rows.find((r) => r.phone === phone && r.lockedUntil && r.lockedUntil > now)?.lockedUntil ?? null;
+      return rows.find((r) => r.identifier === phone && r.lockedUntil && r.lockedUntil > now)?.lockedUntil ?? null;
     },
     async update(id, patch) {
       Object.assign(rows.find((r) => r.id === id)!, patch);

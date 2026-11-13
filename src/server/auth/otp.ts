@@ -1,7 +1,7 @@
 import { createHmac, randomInt, timingSafeEqual } from "node:crypto";
 
 // Politique OTP de la section 17/19 : code à 6 chiffres, expire en 5 min, 5 tentatives,
-// 3 demandes par 10 min et par numéro, blocage de 15 min au 6e code faux.
+// 3 demandes par 10 min et par identifiant, blocage de 15 min au 6e code faux.
 export const OTP_POLICY = {
   ttlMs: 5 * 60_000,
   maxAttempts: 5,
@@ -12,7 +12,7 @@ export const OTP_POLICY = {
 
 export type OtpRecord = {
   id: string;
-  phone: string;
+  identifier: string;
   codeHash: string;
   expiresAt: Date;
   attempts: number;
@@ -20,15 +20,15 @@ export type OtpRecord = {
 };
 
 export interface OtpStore {
-  create(data: { phone: string; codeHash: string; expiresAt: Date }): Promise<OtpRecord>;
-  latest(phone: string): Promise<OtpRecord | null>;
-  countSince(phone: string, since: Date): Promise<number>;
-  activeLock(phone: string, now: Date): Promise<Date | null>;
+  create(data: { identifier: string; codeHash: string; expiresAt: Date }): Promise<OtpRecord>;
+  latest(identifier: string): Promise<OtpRecord | null>;
+  countSince(identifier: string, since: Date): Promise<number>;
+  activeLock(identifier: string, now: Date): Promise<Date | null>;
   update(id: string, patch: { attempts?: number; lockedUntil?: Date }): Promise<void>;
   remove(id: string): Promise<void>;
 }
 
-export type OtpSender = (phone: string, code: string) => Promise<void>;
+export type OtpSender = (identifier: string, code: string) => Promise<void>;
 
 export type RequestResult =
   | { ok: true; code: string }
@@ -52,30 +52,30 @@ export function generateCode(): string {
 export async function requestOtp(
   store: OtpStore,
   send: OtpSender,
-  phone: string,
+  identifier: string,
   secret: string,
   now: Date = new Date(),
 ): Promise<RequestResult> {
-  const lock = await store.activeLock(phone, now);
+  const lock = await store.activeLock(identifier, now);
   if (lock) return { ok: false, reason: "LOCKED", until: lock };
-  const recent = await store.countSince(phone, new Date(now.getTime() - OTP_POLICY.requestWindowMs));
+  const recent = await store.countSince(identifier, new Date(now.getTime() - OTP_POLICY.requestWindowMs));
   if (recent >= OTP_POLICY.requestLimit) return { ok: false, reason: "RATE_LIMITED" };
   const code = generateCode();
-  await store.create({ phone, codeHash: hashCode(code, secret), expiresAt: new Date(now.getTime() + OTP_POLICY.ttlMs) });
-  await send(phone, code);
+  await store.create({ identifier, codeHash: hashCode(code, secret), expiresAt: new Date(now.getTime() + OTP_POLICY.ttlMs) });
+  await send(identifier, code);
   return { ok: true, code };
 }
 
 export async function verifyOtp(
   store: OtpStore,
-  phone: string,
+  identifier: string,
   code: string,
   secret: string,
   now: Date = new Date(),
 ): Promise<VerifyResult> {
-  const lock = await store.activeLock(phone, now);
+  const lock = await store.activeLock(identifier, now);
   if (lock) return { ok: false, reason: "LOCKED", until: lock };
-  const record = await store.latest(phone);
+  const record = await store.latest(identifier);
   if (!record || record.expiresAt <= now) return { ok: false, reason: "EXPIRED" };
 
   // Le 6e essai est refusé : le numéro est bloqué 15 minutes.

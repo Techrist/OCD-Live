@@ -98,17 +98,17 @@ async function main() {
 
   // Comptes de test (section 21).
   const team = [
-    ["+22890000001", "Admin Bovan", "ADMIN"],
-    ["+22890000002", "Validateur", "VALIDATOR"],
-    ["+22890000003", "Assistante", "ASSISTANT"],
-    ["+22890000004", "Régie studio", "STUDIO"],
+    ["+22890000001", "Admin Bovan", "ADMIN", "admin@ocdlive.test"],
+    ["+22890000002", "Validateur", "VALIDATOR", "validateur@ocdlive.test"],
+    ["+22890000003", "Assistante", "ASSISTANT", "assistante@ocdlive.test"],
+    ["+22890000004", "Régie studio", "STUDIO", "studio@ocdlive.test"],
   ] as const;
   const users: Record<string, string> = {};
-  for (const [phone, name, role] of team) {
-    users[role] = (await prisma.user.create({ data: { phone, name, role, countryCode: "TG" } })).id;
+  for (const [phone, name, role, email] of team) {
+    users[role] = (await prisma.user.create({ data: { phone, email, name, role, countryCode: "TG" } })).id;
   }
-  const cm = await prisma.user.create({ data: { phone: "+237690000005", name: "Aïcha Mballa", role: "SELLER", countryCode: "CM", city: "Douala" } });
-  const bj = await prisma.user.create({ data: { phone: "+22990000006", name: "Koffi Adjovi", role: "SELLER", countryCode: "BJ", city: "Cotonou" } });
+  const cm = await prisma.user.create({ data: { phone: "+237690000005", email: "aicha@ocdlive.test", name: "Aïcha Mballa", role: "SELLER", countryCode: "CM", city: "Douala" } });
+  const bj = await prisma.user.create({ data: { phone: "+22990000006", email: "koffi@ocdlive.test", name: "Koffi Adjovi", role: "SELLER", countryCode: "BJ", city: "Cotonou" } });
   await prisma.sellerProfile.create({ data: { userId: cm.id, slug: "chez-aicha", shopName: "Chez Aïcha", activity: "Plats camerounais", categoryId: categories["nourriture"], verified: true } });
   await prisma.sellerProfile.create({ data: { userId: bj.id, slug: "koffi-mode", shopName: "Koffi Mode", activity: "Vêtements", categoryId: categories["mode"] } });
 
